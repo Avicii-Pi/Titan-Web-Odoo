@@ -1,0 +1,360 @@
+<t name="Homepage" t-name="website.homepage">
+  <t t-call="website.layout" pagename.f="homepage">
+    <div id="wrap" class="oe_structure">
+
+      
+      <section class="s_carousel_wrapper p-0" data-vxml="001" data-vcss="001" data-snippet="s_carousel" data-name="Carrusel">
+        <div class="s_carousel s_carousel_default carousel slide s_carousel_boxed o_colored_level s_parallax_no_overflow_hidden s_carousel_controllers_indicators_outside carousel-dark pointer-event" data-bs-interval="6000" id="myCarousel1770328719010" data-scroll-background-ratio="0" data-bs-ride="carousel">
+
+          <div class="carousel-inner">
+
+            
+            <div class="carousel-item o_cc o_colored_level o_background_video s_parallax_no_overflow_hidden o_cc1 py-4 py-lg-5 clickable-slide active" style="background-position: 50% 100%;" data-name="Slide" data-bg-video-src="https://player.vimeo.com/video/1161922383?autoplay=1&amp;dnt=1&amp;muted=1&amp;autopause=0&amp;controls=0&amp;loop=1" data-scroll-background-ratio="0">
+              <a class="slide-link position-absolute top-0 start-0 w-100 h-100 d-none" href="https://titan-tech.odoo.com/shop/dji-osmo-action-6-combo-enhanced-5750" style="z-index: 100;"/>
+              <div class="oe_unremovable container">
+                <div class="row">
+                  <div class="carousel-content o_colored_level s_parallax_no_overflow_hidden col-lg-6" data-scroll-background-ratio="0">
+                    <h2 class="display-3-fs mb-2"><font class="text-white">DJI Osmo 360</font><br/></h2>
+                    <p class="lead mb-3"><font class="text-white">Cámara de Accion 360, graba en 8K</font></p>
+                    <p class="mb-0">
+                      <a href="/shop/dji-osmo-action-6-combo-enhanced-5750" class="o_translate_inline rounded-circle btn btn-outline-custom text-o-color-4" style="background-color: #ffffff; border-width: 2px; border-color: var(--hb-cp-o-color-4); border-style: solid;">&amp;nbsp;Más Información&amp;nbsp;</a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            
+            <div class="carousel-item oe_img_bg o_bg_img_center o_bg_img_origin_border_box o_colored_level py-4 py-lg-5 clickable-slide" style="background-position: 50% 100%; background-image: url(&quot;/web/image/17605-0722b1c4/043f75382ee5ee7b0d078a593c272a0e%40origin.webp&quot;); min-height: 420px;" data-name="Slide" data-attachment-id="17604" data-format-mimetype="image/webp" data-original-id="17604" data-original-src="/web/image/17604-0722b1c4/043f75382ee5ee7b0d078a593c272a0e%40origin.jpg" data-mimetype-before-conversion="image/jpeg" data-resize-width="1920" data-mimetype="image/webp">
+              <a class="slide-link position-absolute top-0 start-0 w-100 h-100 d-none" href="https://titan-tech.odoo.com/shop/dron-dji-flycart-100-enterprise-5793" style="z-index: 100;"/>
+
+              <div class="oe_unremovable container">
+                <div class="row o_grid_mode" data-row-count="6" style="gap: 16px 12px;">
+
+                  <div class="carousel-content text-center o_colored_level o_grid_item g-height-6 g-col-lg-7 col-lg-7" style="z-index: 1; grid-area: 1 / 4 / 7 / 11;">
+                    <p class="lead mb-2">
+                      <span class="h6-fs"><font class="text-white"><strong>Buque Insignia de Carga para Logística</strong></font></span>
+                    </p>
+                    <h2 class="display-3-fs mb-2"><font class="text-white">DJI FlyCart 100</font></h2>
+                    <p class="mb-3"><font class="text-white"><strong>Transporte sin Fronteras</strong></font><br/></p>
+
+                    <div class="s_hr pb0 pt0" data-snippet="s_hr" data-name="Separator">
+                      <hr class="w-25 mx-auto mb-2"/>
+                      <a class="o_translate_inline rounded-circle btn btn-outline-custom text-o-color-4" href="/shop/dron-dji-flycart-100-enterprise-5793" style="background-color: #ffffff; border-width: 1px; border-color: var(--hb-cp-o-color-4); border-style: solid;">&amp;nbsp;Más Información&amp;nbsp;</a></div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          
+          <button class="carousel-control-prev o_not_editable" aria-label="Anterior" title="Anterior" data-bs-target="#myCarousel1770328719010" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"/>
+            <span class="visually-hidden">Anterior</span>
+          </button>
+          <button class="carousel-control-next o_not_editable" aria-label="Siguiente" title="Siguiente" data-bs-target="#myCarousel1770328719010" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"/>
+            <span class="visually-hidden">Siguiente</span>
+          </button>
+
+          
+          <div class="carousel-indicators o_not_editable s_carousel_indicators_dots">
+            <button type="button" class="active" aria-label="Indicador de carrusel" data-bs-target="#myCarousel1770328719010" data-bs-slide-to="0" aria-current="true"/>
+            <button type="button" aria-label="Indicador de carrusel" data-bs-target="#myCarousel1770328719010" data-bs-slide-to="1"/>
+          </div>
+        </div>
+      </section>
+
+      
+      <section class="s_product_list o_colored_level tt_cats_premium" data-vcss="001" data-snippet="s_product_list" data-name="Elementos">
+        <div class="container py-4 py-lg-5">
+
+          
+          <div class="row">
+            <div class="col-12">
+              <h2 class="h3-fs mb-3">Categorías Titan Tech</h2>
+            </div>
+          </div>
+
+          
+          <div class="row g-3 g-md-4">
+
+            <div class="col-3 col-lg-3">
+              <a class="tt_cat_link" href="/shop/category/drones-dji-2" aria-label="Drones DJI">
+                <div class="tt_cat_card">
+                  <div class="tt_cat_media">
+                    <img src="/web/image/17615-07b9e827/cat-dji.png" alt="Drones DJI" loading="lazy" decoding="async"/>
+                  </div>
+                  <div class="tt_cat_title">Drones DJI</div>
+                </div>
+              </a>
+            </div>
+
+            <div class="col-3 col-lg-3">
+              <a class="tt_cat_link" href="/shop/category/drones-dji-enterprise-12" aria-label="DJI Enterprise">
+                <div class="tt_cat_card">
+                  <div class="tt_cat_media">
+                    <img src="/web/image/17608-81c46cf2/cat-dji-ent2.png" alt="DJI Enterprise" loading="lazy" decoding="async"/>
+                  </div>
+                  <div class="tt_cat_title">Enterprise</div>
+                </div>
+              </a>
+            </div>
+
+            <div class="col-3 col-lg-3">
+              <a class="tt_cat_link" aria-label="Cargadores" href="/shop/category/cargadores-11">
+                <div class="tt_cat_card">
+                  <div class="tt_cat_media">
+                    <img src="/web/image/17613-8ab667c5/cat-ugreen.png" alt="Cargadores" loading="lazy" decoding="async"/>
+                  </div>
+                  <div class="tt_cat_title">Cargadores</div>
+                </div>
+              </a>
+            </div>
+
+            <div class="col-3 col-lg-3">
+              <a class="tt_cat_link" aria-label="Accesorios" href="/shop/category/accesorios-dji-4">
+                <div class="tt_cat_card">
+                  <div class="tt_cat_media">
+                    <img src="/web/image/17611-4dd1918b/cat-accesorios2.png" alt="Accesorios" loading="lazy" decoding="async"/>
+                  </div>
+                  <div class="tt_cat_title">Accesorios</div>
+                </div>
+              </a>
+            </div>
+
+            <div class="col-3 col-lg-3">
+              <a class="tt_cat_link" aria-label="Audio" href="/shop/category/parlantes-6">
+                <div class="tt_cat_card">
+                  <div class="tt_cat_media">
+                    <img src="/web/image/17609-262d9520/jbl-parlantes.png" alt="Audio" loading="lazy" decoding="async"/>
+                  </div>
+                  <div class="tt_cat_title">Audio</div>
+                </div>
+              </a>
+            </div>
+
+            <div class="col-3 col-lg-3">
+              <a class="tt_cat_link" href="/shop/category/audiovisual-13?" aria-label="DJI Audiovisual">
+                <div class="tt_cat_card">
+                  <div class="tt_cat_media">
+                    <img src="/web/image/17617-a2e2e322/cat-dji-visual.png" alt="DJI Audiovisual" loading="lazy" decoding="async"/>
+                  </div>
+                  <div class="tt_cat_title">Audiovisual</div>
+                </div>
+              </a>
+            </div>
+
+            <div class="col-3 col-lg-3">
+              <a class="tt_cat_link" href="#" aria-label="Cámaras">
+                <div class="tt_cat_card">
+                  <div class="tt_cat_media">
+                    <img src="/web/image/26280-8689127b/cat-cam-act2.webp" alt="Camaras Action" data-attachment-id="26279" class="img img-fluid o_we_custom_image" data-format-mimetype="image/webp" data-original-id="26279" data-original-src="/web/image/26279-6102938e/cat-cam-act2.png" data-mimetype-before-conversion="image/png" data-resize-width="690" data-mimetype="image/webp"/>
+                  </div>
+                  <div class="tt_cat_title">Cámaras</div>
+                </div>
+              </a>
+            </div>
+
+            <div class="col-3 col-lg-3">
+              <a class="tt_cat_link" href="#" aria-label="Ofertas">
+                <div class="tt_cat_card">
+                  <div class="tt_cat_media">
+                    <img src="/web/image/17613-8ab667c5/cat-ugreen.png" alt="Ofertas" loading="lazy" decoding="async"/>
+                  </div>
+                  <div class="tt_cat_title">Ofertas</div>
+                </div>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      
+      <section data-snippet="s_dynamic_snippet_products" class="s_dynamic_snippet_products oe_website_sale s_dynamic s_product_product_products_item py-4 py-lg-5 o_wsale_products_opt_design_chips o_wsale_products_opt_layout_catalog o_wsale_products_opt_cc1 o_wsale_products_opt_cc o_wsale_products_opt_wishlist_inline o_wsale_products_opt_has_comparison o_wsale_products_opt_has_wishlist o_wsale_products_opt_img_hover_zoom_out_light o_wsale_products_opt_img_secondary_show o_wsale_products_opt_thumb_cover o_wsale_products_opt_hover_shadow_out o_wsale_products_opt_name_color_regular o_wsale_products_opt_actions_onhover o_wsale_products_opt_wishlist_fixed o_wsale_products_opt_has_cta o_wsale_products_opt_actions_promote o_wsale_products_opt_rounded_5 o_colored_level pb32 pt32 o_dynamic_snippet_loading" data-custom-template-data="{}" data-number-of-records="16" data-name="Productos" data-show-variants="true" data-filter-id="2" data-template-key="website_sale.dynamic_filter_template_product_product_products_item" data-number-of-elements="4" data-number-of-elements-small-devices="2" data-carousel-interval="4000" style="--o-wsale-products-grid-gap: 14px;" data-product-category-id="2">
+
+        <div class="s_dynamic_snippet_container container">
+          <div class="row s_nb_column_fixed">
+
+            
+            <section class="s_dynamic_snippet_holder d-none px-4 placeholder-glow o_colored_level">
+              <div class="row">
+                <span class="placeholder col-3 rounded"/>
+                <span class="placeholder col-2 offset-7 rounded"/>
+                <span class="placeholder mt-3 col-6 rounded"/>
+              </div>
+              <div class="row mt-4">
+                <span class="placeholder col-12 rounded" style="height: 250px;"/>
+              </div>
+            </section>
+
+            
+            <section class="s_dynamic_snippet_title oe_unremovable oe_unmovable flex-column flex-md-row mb-0 pb-2 s_col_no_resize o_colored_level justify-content-between d-flex">
+              <div>
+                <h2 class="h3 mb-0">Productos Destacados</h2>
+              </div>
+              <div class="mt-2 mt-md-0">
+                <a title="Ver todo" href="/shop">Ver todos<span class="fa fa-long-arrow-right ms-2"/></a>
+              </div>
+            </section>
+
+            
+            <section class="s_dynamic_snippet_content oe_unremovable oe_unmovable o_not_editable col s_col_no_resize o_colored_level">
+              <div class="css_non_editable_mode_hidden">
+                <div class="missing_option_warning alert alert-info fade show d-print-none rounded-0 d-none">
+                  Tu snippet dinámico se mostrará aquí… Este mensaje se muestra porque no brindaste opciones suficientes para recuperar el contenido.<br/>
+                </div>
+              </div>
+              <div class="dynamic_snippet_template"/>
+            </section>
+
+          </div>
+        </div>
+      </section>
+
+      
+      <section class="s_bento_grid o_colored_level py-4 py-lg-5 pb32" data-snippet="s_bento_grid" data-name="Bento grid">
+        <div class="container">
+          <div class="row o_grid_mode" style="gap: 18px 14px;" data-row-count="12">
+
+            <div class="o_cc o_cc5 rounded o_colored_level col-lg-6 g-height-8 g-col-lg-6 o_grid_item_image o_grid_item s_parallax_no_overflow_hidden oe_img_bg o_bg_img_center o_bg_img_origin_border_box" style="--grid-item-padding-x: 20px; --grid-item-padding-y: 20px; grid-area: 1 / 1 / 9 / 7; z-index: 5; border-radius: 6.4px !important; background-image: url(&quot;/web/image/22341-48565332/Frame%204940.webp&quot;);" data-scroll-background-ratio="0" data-attachment-id="22339" data-format-mimetype="image/webp" data-original-id="22339" data-original-src="/web/image/22339-0b0c3114/Frame%204940.png" data-mimetype-before-conversion="image/png" data-resize-width="690" data-mimetype="image/webp">
+
+              <blockquote class="s_blockquote o_animable position-relative d-flex flex-column gap-3 w-100 mx-auto p-1 fst-normal s_blockquote_default o_colored_level s_parallax_no_overflow_hidden" data-vcss="001" data-snippet="s_blockquote" data-name="Blockquote" data-scroll-background-ratio="0">
+                <div class="s_blockquote_line_elt position-absolute top-0 start-0 bottom-0 bg-o-color-1"><br/></div>
+                <div class="s_blockquote_wrap_icon position-absolute top-0 start-50 translate-middle w-100">
+                  <i class="s_blockquote_icon fa fa-quote-right d-block mx-auto rounded bg-o-color-1" role="img"/>
+                </div>
+                <div class="s_blockquote_infos gap-2 w-100 flex-column align-items-center text-center d-flex">
+                  <div class="s_blockquote_author">
+                    <p class="mb-0">
+                      <span class="h2-fs"><strong><font class="text-o-color-2"><a href="/shop/dji-osmo-360-combo-aventura-camara-360-5623" class="o_translate_inline">DJI OSMO 360</a></font></strong></span>
+                      <span class="o_small-fs"><strong/></span>
+                    </p>
+                  </div>
+                </div>
+              </blockquote>
+            </div>
+
+            <div class="o_cc o_cc5 rounded col-lg-3 o_colored_level g-height-4 g-col-lg-3 o_grid_item_image o_grid_item s_parallax_no_overflow_hidden oe_img_bg o_bg_img_center o_bg_img_origin_border_box" style="--grid-item-padding-x: 20px; --grid-item-padding-y: 20px; z-index: 6; grid-area: 1 / 7 / 5 / 10; text-align: center; border-radius: 6.4px !important; background-image: url(&quot;/web/image/22340-b238417b/Frame%204937.webp&quot;);" data-scroll-background-ratio="0" data-attachment-id="22327" data-format-mimetype="image/webp" data-original-id="22327" data-original-src="/web/image/22327-4f2c2767/Frame%204937.png" data-mimetype-before-conversion="image/png" data-resize-width="484" data-mimetype="image/webp">
+              <span class="h4-fs"><strong><font class="text-o-color-2"><a href="/shop/dji-osmo-nano-128gb-camara-compacta-5696" class="o_translate_inline">DJI NANO</a></font></strong></span>
+            </div>
+
+            <div class="o_cc o_cc5 rounded col-lg-3 o_colored_level g-height-4 g-col-lg-3 o_grid_item_image o_grid_item s_parallax_no_overflow_hidden oe_img_bg o_bg_img_center o_bg_img_origin_border_box" style="--grid-item-padding-x: 20px; --grid-item-padding-y: 20px; z-index: 7; grid-area: 1 / 10 / 5 / 13; text-align: center; border-radius: 6.4px !important; background-image: url(&quot;/web/image/22343-49dff71d/Frame%204938.webp&quot;);" data-scroll-background-ratio="0" data-attachment-id="22331" data-format-mimetype="image/webp" data-original-id="22331" data-original-src="/web/image/22331-4c940f96/Frame%204938.png" data-mimetype-before-conversion="image/png" data-resize-width="484" data-mimetype="image/webp">
+              <font class="text-o-color-2"><span class="h4-fs"><strong><a href="/shop/dji-osmo-action-6-adventure-combo-camara-de-accion-5788" class="o_translate_inline">DJI ACTION 6</a></strong></span></font>
+            </div>
+
+            <div class="o_cc o_cc5 rounded col-lg-3 o_colored_level g-height-4 g-col-lg-3 o_grid_item_image o_grid_item s_parallax_no_overflow_hidden oe_img_bg o_bg_img_center o_bg_img_origin_border_box" style="--grid-item-padding-x: 20px; --grid-item-padding-y: 20px; z-index: 8; grid-area: 5 / 7 / 9 / 10; text-align: center; border-radius: 6.4px !important; background-image: url(&quot;/web/image/22342-a011ea5a/Frame%204939.webp&quot;);" data-scroll-background-ratio="0" data-attachment-id="22332" data-format-mimetype="image/webp" data-original-id="22332" data-original-src="/web/image/22332-da5c02e9/Frame%204939.png" data-mimetype-before-conversion="image/png" data-resize-width="484" data-mimetype="image/webp">
+              <font class="text-o-color-2"><span class="h4-fs"><strong><a class="o_translate_inline" href="#">DJI MINI 5 PRO</a></strong></span></font>
+            </div>
+
+            <div class="o_cc o_cc5 rounded col-lg-3 o_colored_level g-height-4 g-col-lg-3 o_grid_item_image o_grid_item s_parallax_no_overflow_hidden oe_img_bg o_bg_img_center o_bg_img_origin_border_box" style="--grid-item-padding-x: 20px; --grid-item-padding-y: 20px; z-index: 9; grid-area: 5 / 10 / 9 / 13; text-align: center; border-radius: 6.4px !important; background-image: url(&quot;/web/image/22348-413cba54/Frame%204941.webp&quot;);" data-scroll-background-ratio="0" data-attachment-id="22333" data-format-mimetype="image/webp" data-original-id="22333" data-original-src="/web/image/22333-188825ce/Frame%204941.png" data-mimetype-before-conversion="image/png" data-resize-width="484" data-mimetype="image/webp">
+              <span class="h4-fs"><strong><font class="text-o-color-2"><a href="/shop/dron-dji-neo-2-1b-5685" class="o_translate_inline">DJI NEO 2</a></font></strong></span>
+            </div>
+
+            <div class="o_cc o_cc5 rounded col-lg-3 o_colored_level g-height-4 g-col-lg-3 o_grid_item_image o_grid_item s_parallax_no_overflow_hidden oe_img_bg o_bg_img_center o_bg_img_origin_border_box" style="--grid-item-padding-x: 20px; --grid-item-padding-y: 20px; z-index: 10; grid-area: 9 / 7 / 13 / 10; text-align: center; background-image: url(&quot;/web/image/22350-3064b822/mic3.webp&quot;); border-radius: 6.4px !important;" data-scroll-background-ratio="0" data-attachment-id="22349" data-format-mimetype="image/webp" data-original-id="22349" data-original-src="/web/image/22349-43767004/mic3.png" data-mimetype-before-conversion="image/png" data-resize-width="484" data-mimetype="image/webp">
+              <font class="text-o-color-2"><span class="h4-fs"><strong><span class="h4-fs"/><a class="o_translate_inline" href="https://MIc-3"><span class="h4-fs"><span class="h4-fs">DJI MIC 3</span></span><br/><br/><br/></a></strong></span></font></div>
+
+            <div class="o_cc o_cc5 rounded o_colored_level g-height-4 g-col-lg-3 o_grid_item_image o_grid_item s_parallax_no_overflow_hidden oe_img_bg o_bg_img_center o_bg_img_origin_border_box col-lg-3" style="--grid-item-padding-x: 20px; --grid-item-padding-y: 20px; z-index: 11; grid-area: 9 / 1 / 13 / 4; text-align: center; border-radius: 6.4px !important; background-image: url(&quot;/web/image/22347-3a04d067/Frame%204943.webp&quot;);" data-scroll-background-ratio="0" data-attachment-id="22334" data-format-mimetype="image/webp" data-original-id="22334" data-original-src="/web/image/22334-0c0a42aa/Frame%204943.png" data-mimetype-before-conversion="image/png" data-resize-width="484" data-mimetype="image/webp">
+              <span class="h4-fs"><strong><font class="text-o-color-2"><a href="/shop/dron-dji-enterprise-matrice-4e-fotogrametria-5226" class="o_translate_inline">DJI MATRICE 4E</a></font></strong></span>
+            </div>
+
+            <div class="rounded col-lg-3 o_colored_level g-height-4 g-col-lg-3 o_grid_item_image o_grid_item s_parallax_no_overflow_hidden o_cc5 o_cc oe_img_bg o_bg_img_center o_bg_img_origin_border_box" style="--grid-item-padding-x: 20px; --grid-item-padding-y: 20px; z-index: 12; grid-area: 9 / 4 / 13 / 7; text-align: center; border-radius: 6.4px !important; background-image: url(&quot;/web/image/22345-ba1890d1/Frame%204944.webp&quot;);" data-scroll-background-ratio="0" data-attachment-id="22335" data-format-mimetype="image/webp" data-original-id="22335" data-original-src="/web/image/22335-60c353e2/Frame%204944.png" data-mimetype-before-conversion="image/png" data-resize-width="484" data-mimetype="image/webp">
+              <font class="text-o-color-2"><span class="h4-fs"><strong><span class="h4-fs">ACCESORIOS</span></strong></span></font><br/>
+            </div>
+
+            <div class="o_cc o_cc5 rounded col-lg-3 o_colored_level g-height-4 g-col-lg-3 o_grid_item_image o_grid_item s_parallax_no_overflow_hidden oe_img_bg o_bg_img_center o_bg_img_origin_border_box d-lg-block d-none o_snippet_mobile_invisible" style="--grid-item-padding-x: 20px; --grid-item-padding-y: 20px; z-index: 13; grid-area: 9 / 10 / 13 / 13; text-align: center; border-radius: 6.4px !important; background-image: url(&quot;/web/image/22344-7679dab5/Frame%204945.webp&quot;);" data-scroll-background-ratio="0" data-attachment-id="22336" data-format-mimetype="image/webp" data-original-id="22336" data-original-src="/web/image/22336-a14b13fd/Frame%204945.png" data-mimetype-before-conversion="image/png" data-resize-width="484" data-mimetype="image/webp" data-invisible="1">
+              <font class="text-o-color-2"><span class="h4-fs"><strong><span class="h4-fs"><span class="h4-fs">DJI RS 5</span></span></strong></span></font><br/>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      
+      <section data-snippet="s_dynamic_snippet_products" class="s_dynamic_snippet_products oe_website_sale s_dynamic s_product_product_products_item o_colored_level py-4 py-lg-5 o_wsale-products_opt_cc1 pt32 pb32 o_wsale_products_opt_name_color_regular o_wsale_products_opt_thumb_cover o_wsale_products_opt_img_secondary_show o_wsale_products_opt_img_hover_zoom_out_light o_wsale_products_opt_has_wishlist o_wsale_products_opt_has_comparison o_wsale_products_opt_actions_inline o_wsale_products_opt_wishlist_inline o_wsale_products_opt_actions_promote o_wsale_products_opt_cc o_wsale_products_opt_cc1 o_wsale_products_opt_rounded_4 o_wsale_products_opt_thumb_6_5 o_wsale_products_opt_layout_catalog o_wsale_products_opt_design_chips o_wsale_products_opt_has_cta o_wsale_products_opt_hover_shadow_out o_dynamic_snippet_loading" data-custom-template-data="{}" data-number-of-records="16" data-name="Productos" data-show-variants="true" data-filter-id="2" data-template-key="website_sale.dynamic_filter_template_product_product_products_item" data-number-of-elements="4" data-number-of-elements-small-devices="2" data-carousel-interval="4000" style="--o-wsale-products-grid-gap: 16px;" data-product-category-id="6">
+
+        <div class="s_dynamic_snippet_container container">
+          <div class="row s_nb_column_fixed">
+
+            <section class="s_dynamic_snippet_holder d-none px-4 placeholder-glow o_colored_level">
+              <div class="row">
+                <span class="placeholder col-3 rounded"/>
+                <span class="placeholder col-2 offset-7 rounded"/>
+                <span class="placeholder mt-3 col-6 rounded"/>
+              </div>
+              <div class="row mt-4">
+                <span class="placeholder col-12 rounded" style="height: 250px;"/>
+              </div>
+            </section>
+
+            <section class="s_dynamic_snippet_title oe_unremovable oe_unmovable flex-column flex-md-row mb-0 pb-2 s_col_no_resize o_colored_level d-flex justify-content-between">
+              <div>
+                <h2 class="h3 mb-0">Parlantes JBL</h2>
+              </div>
+              <div class="mt-2 mt-md-0">
+                <a title="Ver todo" href="/shop">Ver todos<span class="fa fa-long-arrow-right ms-2"/></a>
+              </div>
+            </section>
+
+            <section class="s_dynamic_snippet_content oe_unremovable oe_unmovable o_not_editable col s_col_no_resize o_colored_level">
+              <div class="css_non_editable_mode_hidden">
+                <div class="missing_option_warning alert alert-info fade show d-none d-print-none rounded-0">
+                  Tu snippet dinámico se mostrará aquí… Este mensaje se muestra porque no brindaste opciones suficientes para recuperar el contenido.<br/>
+                </div>
+              </div>
+              <div class="dynamic_snippet_template"/>
+            </section>
+
+          </div>
+        </div>
+      </section>
+
+ 
+<section class="s_references o_cc o_cc1 o_colored_level py-3 py-lg-4 tt_brands" data-snippet="s_references">
+  <div class="container">
+    <h2 class="mb-2 text-center">Marcas Destacadas</h2>
+
+    
+    <div class="tt_brands_track" aria-label="Marcas destacadas">
+
+      
+      <a class="tt_brand_item" href="#" aria-label="DJI">
+        <img src="/web/image/22375-50c8d315/Frame%205138.png" alt="DJI" loading="lazy" decoding="async"/>
+      </a>
+
+      
+      <a class="tt_brand_item" href="#" aria-label="Marca 2">
+        <img src="/web/image/22371-8a5404df/Frame%205139.webp" alt="Marca 2" loading="lazy" decoding="async"/>
+      </a>
+
+      
+      <a class="tt_brand_item" href="#" aria-label="Marca 3">
+        <img src="/web/image/22373-44b60b40/Frame%205140.png" alt="Marca 3" loading="lazy" decoding="async"/>
+      </a>
+
+      
+      <a class="tt_brand_item" href="#" aria-label="Marca 4">
+        <img src="/web/image/22374-f9d384f5/Frame%205141.png" alt="Marca 4" loading="lazy" decoding="async"/>
+      </a>
+
+      
+      <a class="tt_brand_item" href="#" aria-label="Marca 5">
+        <img src="/web/image/22370-c9e62d4c/Frame%205142.webp" alt="Marca 5" loading="lazy" decoding="async"/>
+      </a>
+
+      
+      <a class="tt_brand_item" href="#" aria-label="Marca 6">
+        <img src="/web/image/22372-95f19ed7/Frame%205143.webp" alt="Marca 6" loading="lazy" decoding="async"/>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+ 
+
+    </div>
+  </t>
+</t>

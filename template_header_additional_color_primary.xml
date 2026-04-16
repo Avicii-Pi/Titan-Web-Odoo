@@ -1,0 +1,5 @@
+<data inherit_id="website.layout" active="False">
+    <xpath expr="//t[@t-set='primary_additional_colors']" position="attributes">
+        <attribute name="t-value">True</attribute>
+    </xpath>
+</data>

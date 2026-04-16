@@ -1,0 +1,119 @@
+<t name="CTA Wrapper" t-name="website_sale.cta_wrapper">
+    <div id="o_wsale_cta_wrapper" t-att-class="'d-flex flex-wrap align-items-center gap-2 mb-4' + (' w-100 w-lg-auto' if is_50_pc else ' w-100')">
+
+        <div id="add_to_cart_wrap" t-attf-class="{{'d-none' if combination_info['prevent_zero_price_sale'] else 'd-flex'}} flex-grow-1 flex-lg-grow-0 flex-wrap align-items-center gap-2 {{'' if is_50_pc else ' w-100'}}">
+            <a id="add_to_cart" role="button" href="#" t-attf-class="btn btn-primary js_check_product a-submit flex-grow-1" t-att-data-show-quantity="is_view_active('website_sale.product_quantity')" data-animation-selector=".o_wsale_product_images" class="btn btn-primary js_check_product a-submit flex-grow-1">
+                <i class="fa fa-shopping-cart me-2"/>
+                <strong>Agregar al Carrito</strong>
+            </a>
+        </div>
+
+        <div id="product_option_block" t-attf-class="d-flex d-empty-none flex-wrap gap-2 w-100 {{'w-sm-auto' if is_50_pc else ''}}"/>
+
+        <!-- BOTON WHATSAPP -->
+        <t t-set="wa_phone">593963216625</t>
+        <t t-set="wa_product_name" t-value="product.name or ''"/>
+        <t t-set="wa_sku" t-value="product.default_code or 'N/A'"/>
+        <t t-set="wa_url" t-value="request.httprequest.url"/>
+        <t t-set="wa_message" t-value="'Deseo consultar stock:%0A*' + wa_product_name + '*%0A(' + wa_sku + ')%0A%0A*Link:* ' + wa_url"/>
+
+        <div class="w-100 mt-2">
+            <a t-att-href="'https://wa.me/' + wa_phone + '?text=' + wa_message" class="btn w-100 d-flex align-items-center justify-content-center gap-2" target="_blank" rel="noopener noreferrer" style="background:#000000;color:#ffffff;font-weight:500;border-radius:20px;">
+                <i class="fa fa-whatsapp" style="font-size:20px;"/>
+                Consulta Stock
+            </a>
+        </div>
+
+        <!-- ACORDEÓN CUOTAS -->
+        <t t-if="combination_info and combination_info.get('price')">
+
+            <t t-set="base_price" t-value="combination_info['price']"/>
+            <t t-set="tt_corriente" t-value="base_price * 1.242"/>
+            <t t-set="tt_6" t-value="(base_price * 1.31) / 6"/>
+            <t t-set="tt_12" t-value="(base_price * 1.35) / 12"/>
+
+            <!-- FORMATO ECUADOR: 1.190,50 -->
+            <t t-set="tt_corriente_fmt" t-value="'{:,.2f}'.format(tt_corriente).replace(',', 'X').replace('.', ',').replace('X', '.')"/>
+            <t t-set="tt_6_fmt" t-value="'{:,.2f}'.format(tt_6).replace(',', 'X').replace('.', ',').replace('X', '.')"/>
+            <t t-set="tt_12_fmt" t-value="'{:,.2f}'.format(tt_12).replace(',', 'X').replace('.', ',').replace('X', '.')"/>
+
+            <div class="w-100 mt-3">
+                <details style="border:1px solid #dedede; border-radius:20px; padding:10px 14px; background:#fbfbfb;">
+
+                    <!-- HEADER -->
+                    <summary style="cursor:pointer; font-weight:600; display:flex; justify-content:space-between; align-items:center; list-style:none; gap:10px;">
+
+                        <span style="flex:1; min-width:0;">
+                            Cuotas desde
+                            <span style="color:#E40E20; font-weight:700;">
+                                <t t-esc="website.currency_id.symbol"/>
+                                <t t-esc="tt_12_fmt"/>
+                            </span>
+                            <span style="font-size:11px; font-weight:600; color:#666;"> al mes</span>
+                        </span>
+
+                        <!-- Ya no es botón -->
+                        <span style="font-size:13px; font-weight:500; color:#555; white-space:nowrap;">
+                            Ver valores ▼
+                        </span>
+
+                    </summary>
+
+                    <!-- ABIERTO -->
+                    <div style="margin-top:10px; font-size:14px; background:#ffffff; border:1px solid #eeeeee; border-radius:8px; padding:8px 10px;">
+
+                        <div style="font-size:12px; color:#555; margin-bottom:8px;" class="">
+                            Paga con tu Tarjeta de Crédito Preferida</div>
+
+                        <div style="display:flex; gap:14px; align-items:center; flex-wrap:wrap; margin-bottom:12px;">
+                            <span style="font-weight:700; color:#1A1F71; font-size:13px;">VISA</span>
+
+                            <svg width="32" height="20" viewBox="0 0 32 20">
+                                <circle cx="12" cy="10" r="8" fill="#EB001B"/>
+                                <circle cx="20" cy="10" r="8" fill="#F79E1B"/>
+                            </svg>
+
+                            <span style="font-weight:700; color:#2E77BC; font-size:13px;">AMEX</span>
+                            <span style="font-weight:700; color:#0079BE; font-size:13px;">DINERS</span>
+                        </div>
+
+                        <!-- CORRIENTE -->
+                        <div style="display:flex; justify-content:space-between; padding:5px 0; border-top:1px solid #f3f3f3;">
+                            <span>Pago Corriente</span>
+                            <span style="color:#E40E20; font-weight:700;">
+                                <t t-esc="website.currency_id.symbol"/>
+                                <t t-esc="tt_corriente_fmt"/>
+                            </span>
+                        </div>
+
+                        <!-- 6 MESES -->
+                        <div style="display:flex; justify-content:space-between; padding:5px 0; border-top:1px solid #f3f3f3;">
+                            <span>Cuotas a 6 Meses</span>
+                            <span style="color:#E40E20; font-weight:700;">
+                                <t t-esc="website.currency_id.symbol"/>
+                                <t t-esc="tt_6_fmt"/>
+                                <span style="font-size:11px; font-weight:600; color:#666;"> /mes</span>
+                            </span>
+                        </div>
+
+                        <!-- 12 MESES -->
+                        <div style="display:flex; justify-content:space-between; padding:5px 0; border-top:1px solid #f3f3f3;">
+                            <span>Cuotas a 12 Meses</span>
+                            <span style="color:#E40E20; font-weight:700;">
+                                <t t-esc="website.currency_id.symbol"/>
+                                <t t-esc="tt_12_fmt"/>
+                                <span style="font-size:11px; font-weight:600; color:#666;"> /mes</span>
+                            </span>
+                        </div>
+
+                        <div style="margin-top: 8px; font-size: 12px; color: rgb(102, 102, 102); text-align: center;" class=""><p>Valores referenciales sujetos a Tarifas Bancarias.</p></div>
+
+                    </div>
+
+                </details>
+            </div>
+
+        </t>
+
+    </div>
+</t>

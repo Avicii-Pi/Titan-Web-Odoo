@@ -1,0 +1,16 @@
+<t name="Badge Extra Price" t-name="website_sale.badge_extra_price">
+        <t t-set="price_extra" t-value="ptav._get_extra_price(combination_info)"/>
+        <span t-if="price_extra" t-attf-class="{{'badge text-bg-primary' if attribute.display_type != 'pills' else 'small text-muted'}}">
+            <!--
+                price_extra is displayed as catalog price instead of
+                price after pricelist because it is impossible to
+                compute. Indeed, the pricelist rule might depend on the
+                selected variant, so the price_extra will be different
+                depending on the selected combination. The price of an
+                attribute is therefore variable and it's not very
+                accurate to display it.
+            -->
+        <t t-if="attribute.display_type in ['pills', 'select']">(</t><span class="sign_badge_price_extra"><t t-out="price_extra &gt; 0 and '+' or '-'"/></span>
+        <span t-out="abs(price_extra)" class="variant_price_extra" style="white-space: nowrap;" t-options="{                 &quot;widget&quot;: &quot;monetary&quot;,                 &quot;display_currency&quot;: website.currency_id             }"/><t t-if="attribute.display_type in ['pills', 'select']">)</t>
+        </span>
+    </t>

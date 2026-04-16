@@ -1,0 +1,4 @@
+<t name="Product Base unit price" t-name="website_sale.base_unit_price">
+        <span class="o_base_unit_price" t-out="base_unit_price" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+         / <span class="oe_custom_base_unit" t-field="product.base_unit_name"/>
+    </t>

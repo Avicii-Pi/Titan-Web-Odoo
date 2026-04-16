@@ -1,0 +1,1643 @@
+/*
+This file is meant to regroup your design customizations. For example, doing
+this will separate your footer with a dotted border using your primary color.
+
+footer {
+    border-top: 5px dotted map-get($theme-colors, 'primary');
+}
+*/
+
+/* =========================================
+   CHECKOUT ADDRESS ORDER - TITAN TECH
+========================================= */
+
+/* Mantener el layout normal de Bootstrap */
+.address_autoformat .row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Orden general */
+.address_autoformat #div_name {
+    order: 1;
+}
+
+.address_autoformat #div_email {
+    order: 2;
+}
+
+.address_autoformat #div_phone {
+    order: 3;
+}
+
+/* Tipo de identificación */
+.address_autoformat .row > div:has(select[name="l10n_latam_identification_type_id"]),
+.address_autoformat .row > div:has(input[name="l10n_latam_identification_type_id"]) {
+    order: 4;
+}
+
+/* Número de identificación */
+.address_autoformat #div_vat {
+    order: 5;
+}
+
+/* Empresa */
+.address_autoformat #company_name_div {
+    order: 6;
+}
+
+/* País / Provincia */
+.address_autoformat #div_country {
+    order: 7;
+}
+
+.address_autoformat #div_state {
+    order: 8;
+}
+
+/* Ciudad antes de calle */
+.address_autoformat #div_city {
+    order: 9;
+}
+
+.address_autoformat #div_street {
+    order: 10;
+}
+
+.address_autoformat #div_street2 {
+    order: 11;
+}
+
+/* Ocultar ZIP */
+.address_autoformat #div_zip {
+    display: none !important;
+}
+
+
+/* =========================================================
+   TABS APPLE FINAL - TITAN TECH
+========================================================= */
+
+#product_extra_tabs {
+    margin-top: 50px;
+}
+
+/* CARD CONTENEDOR */
+#product_extra_tabs .card {
+    background: #ffffff;
+    border: 1px solid #ececec;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.035);
+    padding: 24px;
+}
+
+#product_extra_tabs .card-body {
+    padding: 0;
+}
+
+/* =========================
+   NAV (TABS)
+========================= */
+
+#product_extra_tabs .nav-tabs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+
+    width: fit-content;
+    margin: 0 auto;
+
+    padding: 6px;
+    border-radius: 16px;
+
+    background: #f5f5f7;
+    border: 1px solid #e8e8e8;
+
+    border-bottom: none;
+}
+
+/* ITEMS */
+#product_extra_tabs .nav-tabs .nav-item {
+    margin: 0;
+}
+
+/* BOTONES */
+#product_extra_tabs .nav-tabs .nav-link {
+    border: none !important;
+    background: transparent !important;
+
+    color: #6e6e73;
+
+    font-weight: 600;
+    font-size: 13.5px;
+
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+
+    padding: 9px 18px;
+    border-radius: 12px;
+
+    transition: all 0.2s ease;
+}
+
+/* HOVER */
+#product_extra_tabs .nav-tabs .nav-link:hover {
+    color: #111;
+    background: rgba(255,255,255,0.9) !important;
+}
+
+/* ACTIVO */
+#product_extra_tabs .nav-tabs .nav-link.active {
+    background: #ffffff !important;
+    color: #111 !important;
+
+    border: 1px solid #e4e4e4 !important;
+
+    font-weight: 700;
+
+    transform: translateY(-1px);
+}
+
+/* ELIMINAR LINEAS BOOTSTRAP */
+#product_extra_tabs .nav-tabs::before,
+#product_extra_tabs .nav-tabs::after {
+    display: none;
+}
+
+/* =========================
+   CONTENIDO
+========================= */
+
+#product_extra_tabs .tab-content {
+    margin-top: 34px;
+}
+
+/* ANIMACIÓN SUAVE */
+#product_extra_tabs .tab-pane {
+    animation: ttFadeIn 0.22s ease;
+}
+
+@keyframes ttFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    #product_extra_tabs .card {
+        padding: 18px;
+        border-radius: 20px;
+    }
+
+    #product_extra_tabs .nav-tabs {
+        justify-content: flex-start;
+        width: 100%;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding: 6px;
+    }
+
+    #product_extra_tabs .nav-tabs .nav-link {
+        white-space: nowrap;
+        font-size: 13px;
+        padding: 8px 16px;
+    }
+}
+
+
+/* =========================================================
+   SEARCH RESULTS TITAN TECH - website.one_hybrid
+   Estilo final mejorado
+========================================================= */
+
+/* =========================
+   ITEM GENERAL
+========================= */
+.tt-search-item {
+    border-radius: 14px;
+    transition: all 0.2s ease;
+}
+
+.tt-search-item:hover {
+    background: #f8f8f8;
+}
+
+/* =========================
+   BLOQUE PRINCIPAL
+========================= */
+.o_search_result_item {
+    padding: 12px 8px;
+    gap: 14px;
+}
+
+/* =========================
+   IMAGEN MÁS GRANDE
+========================= */
+.o_search_result_item img.o_image_64_contain,
+.o_search_result_item .o_image_64_contain {
+    width: 100px !important;
+    height: 100px !important;
+    object-fit: contain;
+    border-radius: 12px;
+    background: #fff;
+    flex-shrink: 0;
+}
+
+/* =========================
+   BLOQUE CENTRAL
+========================= */
+.o_search_result_item .o_search_result_item_detail {
+    min-width: 0;
+}
+
+/* TITULO MÁS GRANDE */
+.o_search_result_item .h6.fw-bold {
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    line-height: 1.3;
+    letter-spacing: -0.2px;
+    color: #111;
+    margin-bottom: 4px !important;
+}
+
+/* DESCRIPCION / CATEGORIA */
+.o_search_result_item p {
+    font-size: 14px;
+    line-height: 1.4;
+    color: #777;
+    margin-bottom: 0 !important;
+}
+
+/* LINKS EXTRA DE ODOO */
+.o_search_result_item .extra_link,
+.o_search_result_item .btn-link.btn-sm {
+    padding-left: 0;
+    padding-right: 0;
+    font-size: 14px;
+}
+
+/* =========================
+   BLOQUE DERECHO (PRECIO)
+========================= */
+.tt-search-right {
+    min-width: 185px;
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 4px;
+}
+
+/* PRECIO TACHADO */
+.tt-price-old {
+    font-size: 12px;
+    color: #888;
+    text-decoration: line-through;
+    line-height: 1.1;
+}
+
+/* PRECIO PRINCIPAL EN LA MISMA LINEA CON IVA */
+.tt-price-main {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    gap: 6px;
+    line-height: 1;
+}
+
+/* PRECIO MÁS DOMINANTE */
+.tt-price {
+    font-size: 20px;
+    font-weight: 700;
+    color: #E40E20;
+    letter-spacing: -0.3px;
+    line-height: 1;
+}
+
+/* + IVA EN MISMA LINEA */
+.tt-iva {
+    font-size: 16px;
+    font-weight: 400;
+    color: #888;
+    white-space: nowrap;
+    line-height: 1;
+}
+
+/* PRECIO EXTRA */
+.tt-price-extra {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.2;
+}
+
+/* =========================
+   BOTON MINIMAL
+========================= */
+.tt-btn-wrap {
+    margin-top: 6px;
+}
+
+.tt-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    padding: 0 12px;
+    border-radius: 999px;
+    border: 1px solid #e2e2e2;
+    background: #fff;
+    font-size: 11.5px;
+    font-weight: 500;
+    color: #111;
+    transition: all 0.18s ease;
+    white-space: nowrap;
+}
+
+/* HOVER SUAVE DEL BOTON */
+#wrap a:hover .tt-btn {
+    border-color: #c9c9c9;
+    color: #111;
+    background: #fff;
+}
+
+/* =========================
+   AJUSTE RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+    .o_search_result_item {
+        gap: 10px;
+        align-items: center !important;
+    }
+
+    .o_search_result_item img.o_image_64_contain,
+    .o_search_result_item .o_image_64_contain {
+        width: 68px !important;
+        height: 68px !important;
+    }
+
+    .o_search_result_item .h6.fw-bold {
+        font-size: 15px !important;
+    }
+
+    .tt-search-right {
+        min-width: 135px;
+    }
+
+    .tt-price {
+        font-size: 18px;
+    }
+
+    .tt-iva,
+    .tt-price-old,
+    .tt-price-extra {
+        font-size: 11px;
+    }
+
+    .tt-btn {
+        height: 30px;
+        padding: 0 12px;
+        font-size: 11px;
+    }
+}
+
+
+
+/* =========================================================
+   TITAN TECH - TARJETAS SHOP FINAL
+========================================================= */
+
+/* ===== TARJETA ===== */
+.tt_product_card{
+  background:#fff !important;
+  border-radius:18px !important;
+  padding:14px !important;
+  box-shadow:0 2px 12px rgba(0,0,0,.05) !important;
+  transition:all .25s ease !important;
+  display:flex !important;
+  flex-direction:column !important;
+  height:100% !important;
+}
+
+.tt_product_card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 12px 28px rgba(0,0,0,.08) !important;
+}
+
+/* ===== IMAGEN 1:1 ===== */
+.tt_product_card .tt_product_image{
+  aspect-ratio:1 / 1 !important;
+  width:100% !important;
+  background:#fff !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  overflow:hidden !important;
+  border-radius:14px !important;
+}
+
+.tt_product_card .oe_product_image_img,
+.tt_product_card .oe_product_image_img_secondary{
+  width:100% !important;
+  height:100% !important;
+  object-fit:contain !important;
+}
+
+/* ===== TITULO ===== */
+.tt_product_card .o_wsale_products_item_title{
+  font-size:17px !important;
+  line-height:1.3 !important;
+  font-weight:500 !important;
+  margin:0 0 2px 0 !important;
+}
+
+/* ===== PRECIO ===== */
+.tt_product_card .tt_price_base_wrap{
+  display:flex !important;
+  align-items:baseline !important;
+  gap:4px !important;
+}
+
+.tt_product_card .tt_price_base{
+  font-size:18px !important;
+  font-weight:700 !important;
+  color:#E10600 !important;
+}
+
+.tt_product_card .tt_iva_inline{
+  font-size:13px !important;
+  color:#6b7280 !important;
+  white-space:nowrap !important;
+}
+
+/* Precio final */
+.tt_product_card .tt_price_final{
+  font-size:13px !important;
+  color:#6b7280 !important;
+  margin-top:2px !important;
+}
+
+.tt_product_card .tt_iva_inc{
+  font-size:11px !important;
+  color:#94a3b8 !important;
+  margin-left:4px !important;
+}
+
+/* ===== CONTENEDOR PRECIO + BOTONES ===== */
+.tt_product_card .tt_product_sub{
+  margin-top:4px !important;
+  display:flex !important;
+  justify-content:space-between !important;
+  align-items:flex-end !important;
+}
+
+/* ===== BOTONES ===== */
+
+/* Tamaño reducido */
+.tt_product_card .o_wsale_product_btn .btn,
+.tt_product_card .o_add_wishlist,
+.tt_product_card a.o_add_wishlist,
+.tt_product_card .btn.o_add_wishlist{
+  width:38px !important;
+  height:38px !important;
+  min-width:38px !important;
+  min-height:38px !important;
+  border-radius:999px !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  padding:0 !important;
+}
+
+/* Carrito rojo */
+.tt_product_card .o_wsale_product_btn .btn{
+  background:#E10600 !important;
+  border:1px solid #E10600 !important;
+  color:#fff !important;
+}
+
+/* Corazón blanco */
+.tt_product_card .o_add_wishlist,
+.tt_product_card a.o_add_wishlist,
+.tt_product_card .btn.o_add_wishlist{
+  background:#fff !important;
+  border:1px solid #d1d5db !important;
+  color:#4b5563 !important;
+}
+
+/* Hover corazón */
+.tt_product_card .o_add_wishlist:hover{
+  background:#f9fafb !important;
+  border-color:#cbd5e1 !important;
+  color:#111827 !important;
+}
+
+/* Iconos centrados */
+.tt_product_card .o_wsale_product_btn .btn i,
+.tt_product_card .o_add_wishlist i{
+  font-size:14px !important;
+  margin:0 !important;
+  line-height:1 !important;
+}
+
+
+
+/* ==============================
+   TITAN TECH - Footer Minimal
+============================== */
+
+.tt-footer-copy{
+  font-size: 13px;
+  color: #d1d5db;
+}
+
+.tt-footer-links a{
+  font-size: 13px;
+  color: #d1d5db;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all .2s ease;
+}
+
+.tt-footer-links a:hover{
+  color: #E40E20; /* Rojo Titan */
+}
+
+.o_footer_copyright{
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+/* =========================================================
+   TITAN FOOTER (TTF) + BENEFICIOS (TTB) — FINAL
+========================================================= */
+
+#footer{
+
+  /* ---------- TTF Base ---------- */
+  .ttf{
+    background:#000;
+    color:#fff;
+    border-top:1px solid rgba(255,255,255,.12);
+  }
+  .ttf__wrap{ padding:26px 16px; }
+
+  .ttf__title{
+    margin:0 0 10px;
+    font-size:13px;
+    letter-spacing:.45px;
+    text-transform:uppercase;
+  }
+  .ttf__line{
+    height:1px;
+    background:rgba(255,255,255,.12);
+    margin:0 0 14px;
+  }
+
+  /* Desktop grid */
+  .ttf__grid--4{
+    margin-top:22px;
+    display:grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap:26px;
+    align-items:start;
+  }
+
+  .ttf__links a{
+    color:#b8b8b8;
+    text-decoration:none;
+    font-size:14px;
+    display:inline-block;
+    padding:5px 0;
+  }
+  .ttf__links a:hover{ color:#fff; text-decoration:underline; }
+
+  .ttf__infoLine{
+    margin:0 0 4px 0;
+    color:#b8b8b8;
+    font-size:14px;
+    line-height:1.22;
+  }
+
+  .ttf__btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:fit-content;
+    padding:8px 12px;
+    border-radius:999px;
+    border:1px solid rgba(255,255,255,.22);
+    background:rgba(255,255,255,.02);
+    color:#fff;
+    text-decoration:none;
+    font-size:13px;
+    transition:border-color .2s ease, background .2s ease, transform .2s ease;
+  }
+  .ttf__btn:hover{
+    border-color: rgba(255,255,255,.55);
+    background:rgba(255,255,255,.03);
+    transform: translateY(-1px);
+  }
+
+  .ttf__pills{ display:flex; flex-wrap:wrap; gap:8px; }
+  .ttf__pill{
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:999px;
+    padding:6px 10px;
+    font-size:12px;
+    color:#b8b8b8;
+    white-space:nowrap;
+  }
+
+  .ttf__social{
+    display:grid;
+    grid-template-columns: repeat(4, 34px);
+    gap:10px;
+    align-items:center;
+  }
+  .ttf__social a{
+    width:34px;
+    height:34px;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:12px;
+    color:#fff;
+    text-decoration:none;
+    transition:border-color .2s ease, color .2s ease, transform .2s ease;
+  }
+  .ttf__social a:hover{
+    border-color: rgba(228,14,32,.65);
+    color:#E40E20;
+    transform: translateY(-1px);
+  }
+
+  .ttf__spacer{ height:20px; }
+
+  /* Mobile parts (default hidden on desktop) */
+  .ttf__acc{ display:none; }
+  .ttf__bar{ display:none; }
+
+  /* Accordion base */
+  .ttf__panel{
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:12px;
+    overflow:hidden;
+    background:rgba(255,255,255,.02);
+  }
+  .ttf__sum{
+    list-style:none;
+    cursor:pointer;
+    padding:10px 12px;
+    font-size:13px;
+    letter-spacing:.4px;
+    text-transform:uppercase;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+  }
+  .ttf__sum::-webkit-details-marker{ display:none; }
+  .ttf__chev{ color:#b8b8b8; transition:transform .15s ease; }
+  .ttf__panel[open] .ttf__chev{ transform:rotate(180deg); }
+  .ttf__content{ padding:0 12px 12px; }
+
+  @media (max-width: 560px){
+    .ttf__wrap{ padding:16px 14px; }
+
+    /* IMPORTANT: hide desktop grid, show mobile UI */
+    .ttf__grid--4{ display:none; }
+
+    .ttf__acc{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      margin-top:12px;
+    }
+
+    .ttf__bar{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      margin-top:12px;
+      padding-top:12px;
+      border-top:1px solid rgba(255,255,255,.12);
+    }
+
+    .ttf__barRow{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .ttf__barLabel{
+      font-size:12px;
+      letter-spacing:.35px;
+      text-transform:uppercase;
+      color:#fff;
+      white-space:nowrap;
+    }
+
+    .ttf__social--bar{
+      grid-template-columns: repeat(4, 32px);
+      gap:8px;
+    }
+    .ttf__social--bar a{
+      width:32px;
+      height:32px;
+      border-radius:10px;
+    }
+
+    .ttf__barText{
+      color:#b8b8b8;
+      font-size:12.6px;
+      line-height:1.2;
+      flex:1 1 auto;
+      min-width:170px;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+
+    .ttf__btn--maps{
+      padding:7px 10px;
+      font-size:12px;
+      border-color: rgba(255,255,255,.65);
+      background:rgba(255,255,255,.03);
+    }
+  }
+
+  /* =========================
+     BENEFICIOS (TTB) — RECUPERADO
+  ========================= */
+  .ttb{
+    --tt-red:#E40E20;
+    --tt-bg:#0f0f10;
+    --tt-line:rgba(255,255,255,.08);
+    --tt-text:#ffffff;
+    --tt-muted:rgba(255,255,255,.72);
+
+    background: var(--tt-bg);
+    padding: 18px 16px;
+    border-top: 3px solid var(--tt-red);
+    border-bottom: 3px solid var(--tt-red);
+  }
+
+  .ttb__container{
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .ttb__grid{
+    display:grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px 16px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .ttb__item{
+    position:relative;
+    display:flex;
+    align-items:center;
+    gap: 12px;
+    padding: 12px;
+    border: 1px solid var(--tt-line);
+    border-radius: 14px;
+    background: rgba(255,255,255,.02);
+    transition: transform .18s ease, border-color .18s ease, background .18s ease;
+  }
+
+  .ttb__item::before{
+    content:"";
+    position:absolute;
+    left: 12px;
+    right: 12px;
+    top: -1px;
+    height: 2px;
+    border-radius: 999px;
+    background: transparent;
+    transition: background .18s ease;
+  }
+
+  @media (hover:hover){
+    .ttb__item:hover{
+      transform: translateY(-2px);
+      border-color: rgba(228,14,32,.35);
+      background: rgba(255,255,255,.03);
+    }
+    .ttb__item:hover::before{ background: var(--tt-red); }
+  }
+
+  .ttb__icon{
+    width: 42px;
+    height: 42px;
+    flex: 0 0 auto;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius: 12px;
+    background: rgba(228,14,32,.08);
+    outline: 1px solid rgba(228,14,32,.12);
+  }
+
+  .ttb__title{
+    color: var(--tt-text);
+    font-weight: 650;
+    font-size: 14px;
+    line-height: 1.25;
+    margin: 0;
+  }
+
+  .ttb__desc{
+    margin: 2px 0 0 0;
+    color: var(--tt-muted);
+    font-size: 12.5px;
+    line-height: 1.25;
+  }
+
+  @media (min-width: 1024px){
+    .ttb__grid{ grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  }
+}
+
+/* =========================================================
+   TITAN TECH - MOBILE LAYOUT PERSONALIZADO BENTO
+========================================================= */
+
+@media (max-width: 767.98px){
+
+  /* Convertimos el grid a flex */
+  .s_bento_grid .row.o_grid_mode{
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 12px !important;
+  }
+
+  /* Reset base */
+  .s_bento_grid .o_grid_item{
+    grid-area: auto !important;
+    background-color: #F2F2F2 !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+    border-radius: 16px !important;
+  }
+
+  /* ===== 1️⃣ OSMO GRANDE ===== */
+  .s_bento_grid .o_grid_item:nth-child(1){
+    width: 100% !important;
+    min-height: 240px;
+    background-size: 90% auto !important;
+  }
+
+  /* ===== 2️⃣ MINI 5 PRO GRANDE ===== */
+  .s_bento_grid .o_grid_item:nth-child(4){
+    width: 100% !important;
+    min-height: 210px;
+    background-size: 90% auto !important;
+  }
+
+  /* ===== 3️⃣ RESTO EN 2 COLUMNAS ===== */
+  .s_bento_grid .o_grid_item:nth-child(n+2):not(:nth-child(4)){
+    width: calc(50% - 6px) !important;
+    min-height: 170px;
+    background-size: 85% auto !important;
+  }
+
+/* Pastillas blancas más delgadas y elegantes */
+.s_bento_grid .h4-fs,
+.s_bento_grid .h2-fs{
+  display: inline-block;
+  background: rgba(255,255,255,.96);
+  padding: 4px 10px;        /* 🔥 más angosto */
+  border-radius: 10px;      /* menos inflado */
+  font-size: 14px !important;
+  line-height: 1.1 !important;
+  letter-spacing: .3px;
+}
+
+  /* Quitar adornos del blockquote */
+  .s_bento_grid .s_blockquote_line_elt,
+  .s_bento_grid .s_blockquote_wrap_icon{
+    display: none !important;
+  }
+
+}
+
+
+/* =========================================================
+   TITAN TECH | BUSCADOR HEADER + AUTOCOMPLETE FINAL
+   - Barra más ancha
+   - Texto del input +2px
+   - Dropdown premium compacto
+   - Título +2px
+   - Precio grande rojo alineado derecha
+   - Precio tachado gris
+   - + IVA automático
+========================================================= */
+
+:root{
+  --tt-red: #E40E20;
+  --tt-bg: #f7f7f7;
+  --tt-border: #e6e6e6;
+  --tt-border-soft: #ededed;
+  --tt-hover: #f6f7f8;
+  --tt-text: #111;
+  --tt-muted: #6b7280;
+  --tt-shadow: 0 20px 60px rgba(0,0,0,.12);
+  --tt-shadow-focus: 0 8px 30px rgba(0,0,0,.06);
+}
+
+/* ================================
+   BARRA DE BUSQUEDA HEADER
+================================ */
+
+header form.o_searchbar_form.s_searchbar_input{
+  min-width: 600px;
+  max-width: 760px;
+  width: 100%;
+  display: block;
+}
+
+header form.o_searchbar_form.s_searchbar_input .input-group{
+  width: 100%;
+}
+
+header form.o_searchbar_form.s_searchbar_input .oe_search_box{
+  height: 48px;
+  font-size: 16px;
+  background: var(--tt-bg);
+  border: 1px solid var(--tt-border);
+  padding-left: 20px;
+
+  border-top-left-radius: 999px;
+  border-bottom-left-radius: 999px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+
+  border-right: 0;
+  box-shadow: none;
+  outline: none;
+}
+
+header form.o_searchbar_form.s_searchbar_input .oe_search_box::placeholder{
+  font-size: 14px;
+  opacity: .85;
+}
+
+header form.o_searchbar_form.s_searchbar_input .oe_search_box:focus{
+  background: #fff;
+  border-color: #ddd;
+  box-shadow: var(--tt-shadow-focus);
+}
+
+header form.o_searchbar_form.s_searchbar_input .oe_search_button{
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+/* ================================
+   DROPDOWN AUTOCOMPLETE
+   Contenedor real: .o_dropdown_menu
+================================ */
+
+.o_dropdown_menu{
+  border-radius: 16px !important;
+  border: 1px solid var(--tt-border-soft) !important;
+  box-shadow: var(--tt-shadow) !important;
+  padding: 8px !important;
+  background: #fff !important;
+}
+
+.o_dropdown_menu > a.dropdown-item{
+  display: block !important;
+  width: 100% !important;
+  padding: 8px 12px !important;
+  border-radius: 12px !important;
+  white-space: normal !important;
+}
+
+.o_dropdown_menu > a.dropdown-item:hover{
+  background: var(--tt-hover) !important;
+}
+
+.o_dropdown_menu .o_search_result_item{
+  display: flex !important;
+  align-items: center !important;
+  flex-wrap: nowrap !important;
+  width: 100% !important;
+}
+
+.o_dropdown_menu .o_search_result_item img{
+  border-radius: 10px !important;
+}
+
+.o_dropdown_menu .o_search_result_item_detail{
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  padding-right: 12px !important;
+}
+
+.o_dropdown_menu .o_search_result_item_detail .h6.fw-bold.mb-0{
+  font-size: 15px !important;
+  font-weight: 600 !important;
+  line-height: 1.25 !important;
+
+  display: -webkit-box !important;
+  -webkit-line-clamp: 2 !important;
+  -webkit-box-orient: vertical !important;
+  overflow: hidden !important;
+}
+
+.o_dropdown_menu .o_search_result_item_detail .btn.btn-link,
+.o_dropdown_menu .o_search_result_item_detail .text-muted{
+  font-size: 12px !important;
+  color: var(--tt-muted) !important;
+}
+
+/* ================================
+   BLOQUE PRECIO DERECHA
+================================ */
+
+.o_dropdown_menu .flex-shrink-0.ms-auto{
+  margin-left: auto !important;
+  text-align: right !important;
+  min-width: 130px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-end !important;
+}
+
+/* ================================
+   PRECIO ROJO DEFINITIVO TOTAL
+================================ */
+
+.o_dropdown_menu .flex-shrink-0.ms-auto{
+  color: var(--tt-red) !important;
+}
+
+.o_dropdown_menu .flex-shrink-0.ms-auto b{
+  color: var(--tt-red) !important;
+  font-size: 18px !important;
+  font-weight: 900 !important;
+  line-height: 1 !important;
+}
+
+.o_dropdown_menu .flex-shrink-0.ms-auto .oe_currency_value{
+  color: var(--tt-red) !important;
+  font-size: 18px !important;
+  font-weight: 900 !important;
+}
+
+.o_dropdown_menu .flex-shrink-0.ms-auto .text-muted{
+  color: #9ca3af !important;
+  font-size: 12px !important;
+  margin-bottom: 2px !important;
+}
+
+/* Texto + IVA */
+.o_dropdown_menu .flex-shrink-0.ms-auto b::after{
+  content: " + IVA";
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--tt-muted);
+  margin-left: 4px;
+}
+
+/* Resaltado término buscado */
+.o_dropdown_menu .text-primary-emphasis{
+  background: transparent !important;
+  color: var(--tt-red) !important;
+  font-weight: 800 !important;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 992px){
+  header form.o_searchbar_form.s_searchbar_input{
+    min-width: 0;
+    max-width: 100%;
+  }
+}
+
+
+  /* ======================================
+     PRODUCT PAGE – ORDEN MOBILE CORREGIDO
+     ====================================== */
+@media (max-width: 992px) {
+
+  /* Convertimos la fila principal en columna */
+  #product_detail_main {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  /* 1️⃣ Imagen primero */
+  #product_detail_main > .o_wsale_product_images {
+    order: 1 !important;
+  }
+
+  /* 2️⃣ Bloque derecho (detalles) después */
+  #product_detail_main > #product_details {
+    order: 2 !important;
+  }
+
+  /* Dentro del panel derecho organizamos el contenido */
+  #product_detail #o_wsale_product_details_content {
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  /* Título siempre arriba */
+  #product_detail #o_wsale_product_details_content h1 {
+    order: 1 !important;
+  }
+
+  /* 2️⃣ Precio + CTA */
+  #product_detail .o_wsale_product_details_content_section_price {
+    order: 2 !important;
+  }
+
+  #product_detail .o_wsale_product_details_content_section_cta {
+    order: 2 !important;
+  }
+
+  /* 3️⃣ Características */
+  #product_detail #product_attributes_simple {
+    order: 3 !important;
+  }
+
+  /* 4️⃣ Información adicional */
+  #product_detail .o_wsale_product_details_content_section_accordion {
+    order: 4 !important;
+  }
+
+  #product_detail #product_documents {
+    order: 4 !important;
+  }
+
+  #product_detail .o_wsale_product_details_content_section_contact {
+    order: 4 !important;
+  }
+
+  /* Tabs quedan abajo automáticamente */
+}
+
+/* =========================================
+   TITAN TECH – HEADER SEARCH AUTOCOMPLETE
+   Odoo Website Search (placeholder_header_search_box)
+========================================= */
+
+/* El dropdown/autocomplete suele ser esto en Odoo */
+.o_searchbar_autocomplete,
+.dropdown-menu.o_searchbar_autocomplete,
+.o_searchbar_form + .dropdown-menu,
+.o_searchbar_form .dropdown-menu {
+    width: 520px !important;
+    max-width: 92vw !important;
+    border-radius: 14px !important;
+    padding: 8px 0 !important;
+    background: #fff !important;
+    border: 1px solid rgba(0,0,0,0.06) !important;
+    box-shadow: 0 12px 35px rgba(0,0,0,0.14) !important;
+    overflow: hidden !important;
+    z-index: 2000 !important;
+}
+
+/* Items */
+.o_searchbar_autocomplete .dropdown-item,
+.dropdown-menu.o_searchbar_autocomplete .dropdown-item,
+.o_searchbar_form .dropdown-menu .dropdown-item {
+    padding: 12px 16px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 14px !important;
+    border-bottom: 1px solid rgba(0,0,0,0.06) !important;
+    transition: background-color .18s ease, transform .18s ease !important;
+}
+
+.o_searchbar_autocomplete .dropdown-item:last-child,
+.dropdown-menu.o_searchbar_autocomplete .dropdown-item:last-child,
+.o_searchbar_form .dropdown-menu .dropdown-item:last-child {
+    border-bottom: none !important;
+}
+
+.o_searchbar_autocomplete .dropdown-item:hover,
+.dropdown-menu.o_searchbar_autocomplete .dropdown-item:hover,
+.o_searchbar_form .dropdown-menu .dropdown-item:hover {
+    background: #f7f7f7 !important;
+    transform: translateX(2px) !important;
+}
+
+/* Imágenes dentro del dropdown (Odoo suele usar img dentro del item) */
+.o_searchbar_autocomplete img,
+.dropdown-menu.o_searchbar_autocomplete img,
+.o_searchbar_form .dropdown-menu img {
+    width: 58px !important;
+    height: 58px !important;
+    object-fit: contain !important;
+    border-radius: 10px !important;
+    background: #f7f7f7 !important;
+    padding: 6px !important;
+    flex: 0 0 auto !important;
+}
+
+/* Texto: reducir tamaño y dar aire */
+.o_searchbar_autocomplete .dropdown-item,
+.dropdown-menu.o_searchbar_autocomplete .dropdown-item,
+.o_searchbar_form .dropdown-menu .dropdown-item {
+    font-size: 13px !important;
+    line-height: 1.25 !important;
+    white-space: normal !important;
+}
+
+/* Título (muchas veces viene en strong) */
+.o_searchbar_autocomplete strong,
+.dropdown-menu.o_searchbar_autocomplete strong,
+.o_searchbar_form .dropdown-menu strong {
+    font-size: 13.5px !important;
+    font-weight: 600 !important;
+    color: #111 !important;
+}
+
+/* Categoría / texto secundario */
+.o_searchbar_autocomplete .text-muted,
+.dropdown-menu.o_searchbar_autocomplete .text-muted,
+.o_searchbar_form .dropdown-menu .text-muted {
+    font-size: 12px !important;
+    color: #777 !important;
+}
+
+/* Precio (si viene como oe_currency_value o similar) */
+.o_searchbar_autocomplete .oe_currency_value,
+.dropdown-menu.o_searchbar_autocomplete .oe_currency_value,
+.o_searchbar_form .dropdown-menu .oe_currency_value {
+    font-size: 13.5px !important;
+    font-weight: 600 !important;
+    color: #000 !important;
+}
+
+/* Scroll bonito si hay muchos items */
+.o_searchbar_autocomplete,
+.dropdown-menu.o_searchbar_autocomplete,
+.o_searchbar_form .dropdown-menu {
+    max-height: 70vh !important;
+    overflow: auto !important;
+}
+
+.o_searchbar_autocomplete::-webkit-scrollbar,
+.dropdown-menu.o_searchbar_autocomplete::-webkit-scrollbar,
+.o_searchbar_form .dropdown-menu::-webkit-scrollbar {
+    width: 6px;
+}
+
+.o_searchbar_autocomplete::-webkit-scrollbar-thumb,
+.dropdown-menu.o_searchbar_autocomplete::-webkit-scrollbar-thumb,
+.o_searchbar_form .dropdown-menu::-webkit-scrollbar-thumb {
+    background: #ddd;
+    border-radius: 10px;
+}
+
+/* ===================== TITAN TECH CATEGORÍAS PREMIUM FINAL ===================== */
+
+.tt_cats_premium{
+  background: linear-gradient(to bottom, #f7f7f7, #ffffff);
+}
+
+/* ===== TITULO PRINCIPAL ===== */
+.tt_cats_premium h2{
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 30px;
+  color: #0f172a;
+}
+
+@media (min-width:1200px){
+  .tt_cats_premium h2{
+    font-size: 36px;
+  }
+}
+
+/* ===== LINK ===== */
+.tt_cats_premium .tt_cat_link{
+  display:block;
+  text-decoration:none !important;
+  color:inherit;
+}
+
+/* ===== CARD ===== */
+.tt_cats_premium .tt_cat_card{
+  background:#ffffff;
+  border-radius:22px;
+  padding:22px 18px 18px;
+  text-align:center;
+  border:1px solid rgba(0,0,0,0.04);
+
+  box-shadow:
+    0 20px 40px rgba(0,0,0,0.05),
+    0 5px 10px rgba(0,0,0,0.03);
+
+  transition: all .28s cubic-bezier(.4,0,.2,1);
+  height:100%;
+}
+
+/* Hover premium mejorado */
+.tt_cats_premium .tt_cat_link:hover .tt_cat_card{
+  transform: translateY(-8px);
+  box-shadow:
+    0 30px 60px rgba(0,0,0,0.10),
+    0 10px 20px rgba(0,0,0,0.06);
+}
+
+/* ===== MEDIA ===== */
+.tt_cats_premium .tt_cat_media{
+  height:180px; /* más grande desktop */
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-bottom:12px;
+}
+
+.tt_cats_premium .tt_cat_media img{
+  max-height:100%;
+  max-width:100%;
+  width:auto;
+  object-fit:contain;
+  transition: transform .3s ease;
+}
+
+.tt_cats_premium .tt_cat_link:hover .tt_cat_media img{
+  transform: scale(1.08);
+}
+
+/* ===== TITULO CATEGORIA ===== */
+.tt_cats_premium .tt_cat_title{
+  font-weight:700;
+  letter-spacing:-0.3px;
+  color:#0f172a;
+  font-size:18px;
+  line-height:1.2;
+  position:relative;
+  display:inline-block;
+  transition: color .25s ease;
+}
+
+/* Desktop grande */
+@media (min-width:1200px){
+  .tt_cats_premium .tt_cat_title{
+    font-size:21px;
+  }
+}
+
+@media (min-width:1400px){
+  .tt_cats_premium .tt_cat_title{
+    font-size:22px;
+  }
+}
+
+.tt_cats_premium .tt_cat_link:hover .tt_cat_title{
+  color:#E40E20;
+}
+
+/* Línea roja elegante */
+.tt_cats_premium .tt_cat_title::after{
+  content:"";
+  display:block;
+  height:2px;
+  width:0;
+  margin:8px auto 0;
+  background:#E40E20;
+  transition: width .3s ease;
+  border-radius:2px;
+}
+
+.tt_cats_premium .tt_cat_link:hover .tt_cat_title::after{
+  width:45%;
+}
+
+/* ===== ESPACIADO ENTRE FILAS EN DESKTOP ===== */
+@media (min-width:1200px){
+  .tt_cats_premium .row{
+    row-gap:38px;
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width:992px){
+  .tt_cats_premium .tt_cat_media{ height:125px; }
+  .tt_cats_premium .tt_cat_title{ font-size:16px; }
+}
+
+@media (max-width:768px){
+  .tt_cats_premium .tt_cat_card{
+    padding:16px 10px 12px;
+    border-radius:18px;
+  }
+
+  .tt_cats_premium .tt_cat_media{
+    height:90px;
+    margin-bottom:8px;
+  }
+
+  .tt_cats_premium .tt_cat_title{
+    font-size: clamp(12px, 3vw, 15px);
+  }
+
+  .tt_cats_premium .tt_cat_title::after{
+    margin-top:6px;
+  }
+}
+
+@media (max-width:480px){
+  .tt_cats_premium .tt_cat_media{ height:74px; }
+}
+
+
+/* ===== TARJETAS CARRUSEL ===== */
+/* Titan Tech - IVA prices in product cards (Home carousel) */
+/* ===== TITAN TECH PRICE STYLE ===== */
+
+/* Precio base más grande y rojo */
+.oe_website_sale .oe_product_cart .product_price .tt_price_base{
+  font-size:18px !important;   /* 2px más grande */
+  font-weight:700 !important;
+  color:#E10600 !important;    /* rojo Titan */
+  display:flex;
+  align-items:baseline;
+  line-height:1.15;
+}
+
+/* +IVA sutil */
+.oe_website_sale .oe_product_cart .product_price .tt_iva_inline{
+  font-size:13px !important;
+  font-weight:400 !important;
+  margin-left:4px;
+  color:#6b7280 !important;
+}
+
+/* Precio final */
+.oe_website_sale .oe_product_cart .product_price .tt_price_final{
+  margin-top:4px;
+  font-size:13px !important;
+  color:#6b7280 !important;
+  line-height:1.2;
+}
+
+/* Texto Precio Final */
+.oe_website_sale .oe_product_cart .product_price .tt_iva_inc{
+  font-size:11px;
+  margin-left:4px;
+  color:#94a3b8;
+  font-weight:400;
+}
+
+/* =========================================================
+   TITAN TECH - MARCAS DESTACADAS (Premium + Loop + Reveal)
+   - NO desaparecen nunca
+   - Reveal solo mejora, no es requisito
+========================================================= */
+
+/* Opcional: si tienes .tt_brands en el section, perfecto */
+.tt_brands { background: transparent; }
+
+/* Track */
+.tt_brands_track{
+  display:flex;
+  align-items:center;
+  gap:14px;
+
+  overflow-x:auto;
+  overflow-y:hidden;
+  -webkit-overflow-scrolling:touch;
+
+  padding:12px 0; /* sin padding lateral para evitar cortes */
+  scroll-behavior:auto;
+  scroll-snap-type:x mandatory;
+}
+.tt_brands_track::-webkit-scrollbar{ display:none; }
+
+/* Items: visibles SIEMPRE */
+.tt_brand_item{
+  flex:0 0 auto;
+  width:auto;
+
+  padding:10px 16px;
+  border-radius:14px;
+  background:#fff;
+  border:1px solid rgba(0,0,0,.08);
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-sizing:border-box;
+}
+
+/* Logos */
+.tt_brand_item img{
+  max-height:28px;
+  width:auto;
+  opacity:.9;
+}
+
+/* Tablet */
+@media (min-width: 576px){
+  .tt_brand_item img{ max-height:32px; }
+}
+
+/* Desktop: 6 fijas perfectas */
+@media (min-width: 992px){
+  .tt_brands_track{
+    gap:16px;
+    padding:16px 0;
+    scroll-snap-type:none; /* clave para loop */
+  }
+
+  .tt_brand_item{
+    flex: 0 0 calc((100% - 5 * 16px) / 6);
+    max-width: calc((100% - 5 * 16px) / 6);
+
+    padding:12px 10px;
+    border-radius:14px;
+
+    transition: box-shadow .2s ease, border-color .2s ease;
+  }
+
+  .tt_brand_item img{
+    max-height:38px;
+    transition: opacity .2s ease;
+  }
+
+  .tt_brand_item:hover{
+    box-shadow:0 8px 18px rgba(0,0,0,.08);
+    border-color:rgba(0,0,0,.12);
+  }
+  .tt_brand_item:hover img{ opacity:1; }
+}
+
+/* =========================================================
+   Micro-Reveal (solo si .tt-reveal existe)
+   - No rompe nada si no se aplica
+========================================================= */
+.tt_brands .tt_brand_item{
+  /* estado normal: visible */
+  opacity: 1;
+  transform: none;
+}
+
+/* estado animado: solo cuando .tt-reveal está */
+.tt_brands.tt-reveal .tt_brand_item{
+  animation: ttFadeUp .45s ease both;
+}
+
+/* Stagger opcional */
+.tt_brands.tt-reveal .tt_brand_item:nth-child(1){ animation-delay:.00s; }
+.tt_brands.tt-reveal .tt_brand_item:nth-child(2){ animation-delay:.05s; }
+.tt_brands.tt-reveal .tt_brand_item:nth-child(3){ animation-delay:.10s; }
+.tt_brands.tt-reveal .tt_brand_item:nth-child(4){ animation-delay:.15s; }
+.tt_brands.tt-reveal .tt_brand_item:nth-child(5){ animation-delay:.20s; }
+.tt_brands.tt-reveal .tt_brand_item:nth-child(6){ animation-delay:.25s; }
+.tt_brands.tt-reveal .tt_brand_item:nth-child(7){ animation-delay:.30s; }
+.tt_brands.tt-reveal .tt_brand_item:nth-child(8){ animation-delay:.35s; }
+.tt_brands.tt-reveal .tt_brand_item:nth-child(9){ animation-delay:.40s; }
+.tt_brands.tt-reveal .tt_brand_item:nth-child(10){ animation-delay:.45s; }
+.tt_brands.tt-reveal .tt_brand_item:nth-child(11){ animation-delay:.50s; }
+.tt_brands.tt-reveal .tt_brand_item:nth-child(12){ animation-delay:.55s; }
+
+@keyframes ttFadeUp{
+  from{ opacity:0; transform: translateY(6px); }
+  to{ opacity:1; transform: translateY(0); }
+}
+
+/* Accesibilidad */
+@media (prefers-reduced-motion: reduce){
+  .tt_brands.tt-reveal .tt_brand_item{
+    animation: none !important;
+  }
+}
+
+.tt_brand_badge{
+  border: 1px solid rgba(0,0,0,.08);
+  background: transparent !important;
+}
+
+.tt_brand_text{
+  font-weight: 800;
+  letter-spacing: .4px;
+  font-size: 12px;
+}

@@ -1,0 +1,5 @@
+<data inherit_id="website_sale.product" name="Product Info - Dividers">
+        <xpath expr="//section[@id='product_detail']" position="attributes">
+            <attribute name="t-attf-class" add="o_wsale_product_page_opt_separators" separator=" "/>
+        </xpath>
+    </data>

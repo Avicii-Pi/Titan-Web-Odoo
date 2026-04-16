@@ -1,0 +1,21 @@
+<data inherit_id="web.brand_promotion_message">
+    <xpath expr="." position="replace">
+        <t name="Brand Promotion Message" t-name="web.brand_promotion_message">
+
+            <!-- Mantenemos la variable 'odoo_logo' por compatibilidad,
+                 pero ahora será el "badge" de Titan Tech -->
+            <t t-set="odoo_logo">
+                <a t-att-href="'/'" class="badge text-bg-light tt_brand_badge" title="Titan Tech">
+                    <span class="tt_brand_text">TITAN TECH</span>
+                </a>
+            </t>
+
+            <!-- Cambiamos el texto base (sin “Con la tecnología de…”) -->
+            <t t-set="final_message">%s%s</t>
+
+            <!-- Si _message viene vacío, no mostramos el separador -->
+            <t t-out="final_message % (odoo_logo, _message and (' · ' + _message) or '')"/>
+
+        </t>
+    </xpath>
+</data>

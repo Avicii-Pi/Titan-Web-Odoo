@@ -1,0 +1,240 @@
+<t name="Product" track="1" t-name="website_sale.product">
+    <!-- Qweb variable defining the class suffix for navbar items.
+         Change accordingly to the derired visual result (eg. `primary`, `dark`...)-->
+    <t t-set="navClass" t-valuef="light"/>
+
+    <t t-set="is_fullwidth_content" t-value="website.product_page_image_width in ['none', '100_pc']"/>
+    <t t-set="is_50_pc" t-value="website.product_page_image_width == '50_pc'"/>
+
+    <t t-call="website.layout">
+        <t t-set="additional_title" t-value="product.name"/>
+        <div id="wrap" class="js_sale o_wsale_product_page">
+            <div class="oe_structure oe_empty oe_structure_not_nearest" id="oe_structure_website_sale_product_1" data-editor-message.translate="ARRASTRE BLOQUES DE CREACIÓN AQUÍ PARA QUE ESTÉN DISPONIBLES EN TODOS LOS PRODUCTOS"/>
+
+            <section id="product_detail" t-attf-class="oe_website_sale mt-1 mt-lg-2 mb-5 #{'discount' if combination_info['has_discounted_price'] else ''} {{website._get_product_page_container() == 'regular' and 'o_wsale_container_lg container-lg' or (website._get_product_page_container() == 'fluid' and 'o_wsale_container_fluid container-fluid' or false)}} o_wsale_product_page_opt_image_width_{{website.product_page_image_width}} o_wsale_product_page_opt_image_ratio_{{website.product_page_image_ratio}} o_wsale_product_page_opt_image_ratio_mobile_{{website.product_page_image_ratio_mobile}} o_wsale_product_page_opt_image_radius_{{website.product_page_image_roundness}}" t-att-data-image-ratio="website.product_page_image_ratio" t-att-data-view-track="view_track and '1' or '0'">
+
+                <div class="o_wsale_content_contained container d-flex flex-wrap align-items-center py-3">
+                    <div class="d-flex align-items-center flex-grow-1">
+                        <ol class="o_wsale_breadcrumb breadcrumb m-0 p-0">
+                            <li class="breadcrumb-item d-none d-lg-inline-block">
+                                <a t-att-href="keep(shop_path)">
+                                    <t t-call="website_sale.all_products_link_name"/>
+                                </a>
+                            </li>
+                            <t t-foreach="category.parents_and_self" t-as="cat">
+                                <li class="breadcrumb-item d-none d-lg-inline-block">
+                                    <a class="py-2 py-lg-0" t-att-href="keep('%s/category/%s' % (shop_path, slug(cat)))">
+                                        <i class="oi oi-chevron-left d-lg-none me-1" role="img"/>
+                                        <t t-out="cat.name"/>
+                                    </a>
+                                </li>
+                            </t>
+                            <li class="breadcrumb-item d-none d-lg-inline-block active">
+                                <span t-field="product.name"/>
+                            </li>
+                            <li class="breadcrumb-item d-lg-none">
+                                <a t-att-href="category and keep('%s/category/%s' % (shop_path, slug(cat))) or keep(shop_path)">
+                                    <i class="oi oi-chevron-left me-2" role="img"/>
+                                    <t t-if="category.name" t-out="category.name"/>
+                                    <t t-else="" t-call="website_sale.all_products_link_name"/>
+                                </a>
+                            </li>
+                        </ol>
+                        <div class="d-flex d-md-none gap-2 ms-auto">
+                            <t t-call="website_sale.pricelist_list"/>
+                            <a t-attf-class="o_wsale_product_search_mobile_btn o_not_editable btn btn-{{navClass}} d-none" data-bs-target="#o_wsale_product_search_modal" data-bs-toggle="modal" role="button" title="Buscar productos" href="#">
+                                <i class="oi oi-search" role="presentation"/>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="o_wsale_product_top_bar_desktop d-none d-md-inline-flex flex-wrap gap-2 w-auto mb-lg-auto">
+                        <t t-call="website_sale.pricelist_list"/>
+                    </div>
+                </div>
+
+                <div t-attf-class="row align-items-lg-start {{website.product_page_cols_order == 'inverse' and 'flex-lg-row-reverse' or ''}}" id="product_detail_main" data-name="Product Page" t-att-data-image_layout="website.product_page_image_layout">
+
+                    <div t-attf-class="o_wsale_product_images col o_wsale_sticky_object" t-att-data-image-amount="len(product_variant._get_images() if product_variant else product._get_images())">
+                        <t t-call="website_sale.shop_product_images"/>
+                    </div>
+
+                    <div id="product_details" t-attf-class="position-relative position-lg-sticky o_wsale_sticky_object col">
+                        <div id="o_wsale_product_details_content" t-attf-class="js_product js_main_product o_wsale_content_contained container">
+
+                            <!-- Product title (purchase not available)-->
+                            <t t-set="is_add_to_cart_possible" t-value="product._is_add_to_cart_possible()"/>
+                            <t t-if="not is_add_to_cart_possible" t-call="website_sale.product_title"/>
+
+                            <form t-if="is_add_to_cart_possible">
+                                <!-- Product title (purchase available)-->
+                                <t t-call="website_sale.product_title"/>
+
+                                <div t-if="not is_view_active('website_sale.cta_wrapper_boxed')" class="o_wsale_product_details_content_section o_wsale_product_details_content_section_price mb-4">
+                                    <t t-call="website_sale.product_price"/>
+                                    <small t-if="combination_info.get('base_unit_price')" class="ms-1 text-muted o_base_unit_price_wrapper d-none">
+                                        <t t-call="website_sale.base_unit_price">
+                                            <t t-set="base_unit_price" t-value="combination_info['base_unit_price']"/>
+                                        </t>
+                                    </small>
+                                </div>
+
+                                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+
+                                <t name="variant_info">
+                                    <input type="hidden" class="o_not_editable product_id" name="product_id" t-att-value="product_variant.id"/>
+                                    <input type="hidden" class="o_not_editable product_template_id" name="product_template_id" t-att-value="product.id"/>
+                                    <input t-if="product.public_categ_ids.ids" type="hidden" class="product_category_id" name="product_category_id" t-att-value="product.public_categ_ids.ids[0]"/>
+                                    <input type="hidden" name="product_type" t-att-value="product.type"/>
+
+                                    <div t-attf-class="o_wsale_product_details_content_section o_wsale_product_details_content_section_attributes mb-4 {{not (product.valid_product_template_attribute_line_ids or product._has_multiple_uoms()) and 'd-none' or ''}}">
+                                        <t t-call="website_sale.variants">
+                                            <t t-set="ul_class" t-valuef="flex-column"/>
+                                            <t t-set="parent_combination" t-value="None"/>
+                                            <t t-set="combination" t-value="combination_info['combination']"/>
+                                        </t>
+                                    </div>
+                                </t>
+
+                                <div class="o_wsale_product_details_content_section o_wsale_product_details_content_section_cta mb-4">
+                                    <t t-call="website_sale.cta_wrapper"/>
+                                    <t t-if="is_view_active('website_sale.product_terms_and_conditions')" t-call="website_sale.product_terms_and_conditions"/>
+                                </div>
+
+                                <div class="o_wsale_product_details_content_section o_wsale_product_details_content_section_accordion mb-4" t-if="is_view_active('website_sale_comparison.accordion_specs_item') or is_view_active('website_sale.accordion_more_information')">
+                                    <t t-call="website_sale.product_accordion"/>
+                                </div>
+
+                                <div t-if="combination_info['prevent_zero_price_sale']" class="o_wsale_product_details_content_section o_wsale_product_details_content_section_contact mb-4">
+                                    <div id="contact_us_wrapper" t-attf-class="d-flex oe_structure oe_structure_solo #{_div_classes}">
+                                        <section class="s_text_block" data-snippet="s_text_block" data-name="Text">
+                                            <div class="container">
+                                                <a t-att-href="website.contact_us_button_url" t-att-data-url="website.contact_us_button_url" class="btn btn-primary btn_cta">
+                                                    Contáctanos
+                                                </a>
+                                            </div>
+                                        </section>
+                                    </div>
+                                </div>
+
+                                <t t-set="single_value_attributes" t-value="product.valid_product_template_attribute_line_ids._prepare_single_value_for_display()"/>
+                                <div id="product_attributes_simple" t-if="single_value_attributes" class="o_wsale_product_details_content_section o_wsale_product_details_content_section_specs mb-4">
+                                    <table t-attf-class="table table-sm text-muted {{'' if single_value_attributes else 'd-none'}}">
+                                        <t t-foreach="single_value_attributes" t-as="attribute">
+                                            <tr>
+                                                <td>
+                                                    <span t-field="attribute.name"/>:
+                                                    <t t-foreach="single_value_attributes[attribute]" t-as="ptal">
+                                                        <span t-field="ptal.product_template_value_ids._only_active().name"/>
+                                                        <t t-if="not ptal_last">, </t>
+                                                    </t>
+                                                </td>
+                                            </tr>
+                                        </t>
+                                    </table>
+                                </div>
+
+                                <t t-set="product_documents" t-value="product.sudo().product_document_ids.filtered(lambda doc: doc.shown_on_product_page)"/>
+                                <div id="product_documents" class="o_wsale_product_details_content_section o_wsale_product_details_content_section_documents mb-4" t-if="product_documents">
+                                    <strong>Documentos</strong>
+                                    <div class="list-group">
+                                        <t t-foreach="product_documents" t-as="document_sudo">
+                                            <t t-set="attachment_sudo" t-value="document_sudo.ir_attachment_id"/>
+                                            <t t-set="target" t-value="attachment_sudo.type == 'url' and '_blank' or '_self'"/>
+                                            <t t-set="icon" t-value="attachment_sudo.type == 'url' and 'fa-link' or 'fa-download'"/>
+                                            <a class="list-group-item list-group-item-action" t-att-href="'/shop/' + slug(product) + '/document/' + str(document_sudo.id)" t-att-target="target">
+                                                <i t-att-class="'fa ' + icon + ' me-2'"/>
+                                                <t t-out="attachment_sudo.name"/>
+                                            </a>
+                                        </t>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div id="product_full_description" t-field="product.website_description" class="oe_structure oe_empty mt16"/>
+
+            <t t-set="has_desc" t-value="bool(product.x_studio_tt_desc_web)"/>
+            <t t-set="has_box" t-value="bool(product.x_studio_tt_en_caja_1)"/>
+            <t t-set="has_specs" t-value="bool(product.x_studio_tt_specs_1)"/>
+
+            <t t-if="has_desc or has_box or has_specs">
+                <section id="product_extra_tabs" class="container mt-4">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body">
+
+                            <!-- NAV (CORREGIDO: sin class duplicado) -->
+                            <ul class="nav nav-tabs" role="tablist">
+
+                                <!-- DESCRIPCION -->
+                                <li class="nav-item" t-if="has_desc">
+                                    <button type="button" data-bs-toggle="tab" data-bs-target="#pane-descweb" t-attf-class="nav-link #{'active' if has_desc else ''}">
+                                        Detalles
+                                    </button>
+                                </li>
+
+                                <!-- EN CAJA -->
+                                <li class="nav-item" t-if="has_box">
+                                    <button type="button" data-bs-toggle="tab" data-bs-target="#pane-en-caja" t-attf-class="nav-link #{'active' if (not has_desc and has_box) else ''}">
+                                        En caja
+                                    </button>
+                                </li>
+
+                                <!-- SPECS -->
+                                <li class="nav-item" t-if="has_specs">
+                                    <button type="button" data-bs-toggle="tab" data-bs-target="#pane-specs" t-attf-class="nav-link #{'active' if (not has_desc and not has_box and has_specs) else ''}">
+                                        Ficha Tecnica
+                                    </button>
+                                </li>
+
+                            </ul>
+
+                            <!-- CONTENT -->
+                            <div class="tab-content pt-3">
+
+                                <!-- DESCRIPCION -->
+                                <div t-if="has_desc" t-attf-class="tab-pane fade #{'show active' if has_desc else ''}" id="pane-descweb">
+                                    <div t-field="product.x_studio_tt_desc_web"/>
+                                </div>
+
+                                <!-- EN CAJA -->
+                                <div t-if="has_box" t-attf-class="tab-pane fade #{'show active' if (not has_desc and has_box) else ''}" id="pane-en-caja">
+                                    <div t-field="product.x_studio_tt_en_caja_1"/>
+                                </div>
+
+                                <!-- SPECS -->
+                                <div t-if="has_specs" t-attf-class="tab-pane fade #{'show active' if (not has_desc and not has_box and has_specs) else ''}" id="pane-specs">
+                                    <div t-field="product.x_studio_tt_specs_1"/>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+            </t>
+
+            <div class="oe_structure oe_empty oe_structure_not_nearest mt16" id="oe_structure_website_sale_product_2" data-editor-message.translate="ARRASTRE BLOQUES DE CREACIÓN AQUÍ PARA QUE ESTÉN DISPONIBLES EN TODOS LOS PRODUCTOS"/>
+        </div>
+
+        <div id="o_wsale_product_search_modal" class="modal fade css_editable_mode_hidden" aria-hidden="true" tabindex="-1">
+            <div class="modal-dialog modal-lg pt-5">
+                <div class="modal-content mt-5 bg-transparent border-0">
+                    <div class="o_container_small">
+                        <t t-call="website.website_search_box_input">
+                            <t t-set="default_style" t-valuef="true"/>
+                            <t t-set="search_type" t-valuef="products"/>
+                            <t t-set="_classes" t-valuef="input-group rounded o_cc o_cc1 mb-1"/>
+                            <t t-set="_input_classes" t-valuef="border-0 p-3"/>
+                            <t t-set="_submit_classes" t-valuef="px-4"/>
+                            <t t-if="category" t-set="placeholder">Buscar en <t t-out="category.name"/></t>
+                        </t>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+</t>

@@ -1,0 +1,30 @@
+<t t-name="website_sale.product_title">
+        <div t-attf-class="o_wsale_product_details_content_section o_wsale_product_details_content_section_title {{'mb-3' if not product.description_ecommerce else ''}}">
+            <!-- FIXME VCR variable seems unused -->
+            <t t-set="base_url" t-value="website.get_base_url()"/>
+            <h1 t-attf-class="h3 {{'mb-3' if not product.description_ecommerce and not is_view_active('website_sale.product_comment') else ''}}" t-field="product.name">
+                Nombre del producto
+            </h1>
+            <t t-if="is_view_active('website_sale.product_comment')">
+                <a href="#o_product_page_reviews" class="o_product_page_reviews_link d-block mb-2 text-decoration-none">
+                    <t t-call="portal_rating.rating_widget_stars_static">
+                        <!-- sudo: product.product - visitor can access product average rating -->
+                        <t t-set="rating_avg" t-value="product.sudo().rating_avg"/>
+                        <t t-set="trans_text_plural">%s reseñas</t>
+                        <t t-set="trans_text_singular">%s reseña</t>
+                        <t t-set="rating_count" t-value="(trans_text_plural if product.rating_count &gt; 1 else trans_text_singular) % product.rating_count"/>
+                    </t>
+                </a>
+            </t>
+            <div t-field="product.description_ecommerce" t-attf-class="oe_structure mb-3 text-muted" placeholder="Una descripción detallada y con formato para promocionar su producto en esta página. Use '/' para explorar más funciones."/>
+            <t t-if="is_view_active('website_sale.product_tags')" t-call="website_sale.product_tags">
+                <t t-set="all_product_tags" t-value="product_variant.all_product_tag_ids"/>
+            </t>
+            <p t-if="(not is_add_to_cart_possible) and (not product.active)" class="alert alert-warning">
+                Este producto ya no está disponible.
+            </p>
+            <p t-elif="not is_add_to_cart_possible" class="alert alert-warning">
+                Este producto no tiene combinaciones válidas.
+            </p>
+        </div>
+    </t>

@@ -1,0 +1,6 @@
+<data inherit_id="website_sale.product" name="Image Zoom On Click">
+        <xpath expr="//div[hasclass(&quot;o_wsale_product_page&quot;)]" position="attributes">
+            <attribute name="data-ecom-zoom-click">1</attribute>
+            <attribute name="class" separator=" " add="ecom-zoomable"/>
+        </xpath>
+    </data>

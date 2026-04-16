@@ -1,0 +1,59 @@
+<data inherit_id="website_sale.product" active="True" name="TT Extra Info No Animation">
+
+    <!-- Quitamos margen inferior del CTA -->
+    <xpath expr="//div[contains(@class,'o_wsale_product_details_content_section_cta')]" position="attributes">
+        <attribute name="class" remove="mb-4" add="mb-0" separator=" "/>
+    </xpath>
+
+    <!-- Insertamos acordeón debajo del CTA -->
+    <xpath expr="//div[contains(@class,'o_wsale_product_details_content_section_cta')]/t[@t-call='website_sale.cta_wrapper']" position="after">
+
+        <t t-if="any([product.sudo()[field.name] for field in website.shop_extra_field_ids])">
+
+            <div class="mt-0 pt-0 col-lg-10 col-12">
+
+                <!-- Botón simple sin animación -->
+                <button class="btn w-100 text-start d-flex justify-content-between align-items-center border rounded px-3 py-2" type="button" onclick="document.getElementById('tt_extra_info').classList.toggle('d-none')">
+
+                    <span class="fw-semibold">Información Extra</span>
+                    <span class="small text-muted">Ver más ▼</span>
+
+                </button>
+
+                <!-- Contenido SIN collapse -->
+                <div id="tt_extra_info" class="d-none border border-top-0 rounded-bottom p-3">
+
+                    <t t-foreach="website.shop_extra_field_ids" t-as="field">
+                        <t t-if="product.sudo()[field.name]">
+
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+
+                                <span class="text-muted small">
+                                    <t t-out="field.label"/>
+                                </span>
+
+                                <span class="text-end">
+                                    <t t-if="field.field_id.ttype != 'binary'">
+                                        <span t-out="product.sudo()[field.name]" t-options="{'widget': field.field_id.ttype}"/>
+                                    </t>
+                                    <t t-else="">
+                                        <a target="_blank" class="text-decoration-none" t-attf-href="/web/content/product.template/#{product.id}/#{field.name}?download=1">
+                                            Descargar
+                                        </a>
+                                    </t>
+                                </span>
+
+                            </div>
+
+                        </t>
+                    </t>
+
+                </div>
+
+            </div>
+
+        </t>
+
+    </xpath>
+
+</data>

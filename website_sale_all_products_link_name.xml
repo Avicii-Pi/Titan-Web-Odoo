@@ -1,0 +1,3 @@
+<t name="All Products name" t-name="website_sale.all_products_link_name">
+        <span placeholder="All products">Todos los productos</span>
+    </t>

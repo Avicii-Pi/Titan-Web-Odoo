@@ -1,0 +1,8 @@
+<data inherit_id="web.brand_promotion" name="Brand Promotion">
+    <xpath expr="//t[@t-call='web.brand_promotion_message']" position="replace">
+        <t t-set="_message">
+            Cree un <a target="_blank" href="http://www.odoo.com/app/website?utm_source=db&amp;utm_medium=website">sitio web gratuito</a>
+        </t>
+        <t t-call="web.brand_promotion_message" _utm_medium.f="website"/>
+    </xpath>
+</data>

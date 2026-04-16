@@ -1,0 +1,13 @@
+<data inherit_id="website_sale.cta_wrapper" name="Select Quantity">
+        <div id="add_to_cart_wrap" position="inside">
+            <div t-attf-class="css_quantity input-group {{'d-none' if combination_info['prevent_zero_price_sale'] else 'd-inline-flex order-first'}} align-middle border" contenteditable="false">
+                <a t-attf-href="#" class="css_quantity_minus btn btn-link pe-2 js_add_cart_json border-0" aria-label="Eliminar uno" title="Eliminar uno" name="remove_one">
+                    <i class="oi oi-minus text-600"/>
+                </a>
+                <input type="text" t-attf-class="form-control quantity text-center border-0" data-min="1" name="add_qty" t-att-value="1"/>
+                <a t-attf-href="#" class="css_quantity_plus btn btn-link ps-2 js_add_cart_json border-0" aria-label="Agregar uno" title="Agregar uno">
+                    <i class="oi oi-plus text-600"/>
+                </a>
+            </div>
+        </div>
+    </data>

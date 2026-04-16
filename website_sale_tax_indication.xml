@@ -1,0 +1,8 @@
+<t active="False" t-name="website_sale.tax_indication">
+        <span t-if="website.show_line_subtotals_tax_selection == 'tax_excluded'" class="fs-6 fw-normal text-muted text-nowrap">
+            + IVA
+        </span>
+        <span t-else="" class="fs-6 fw-normal text-muted text-nowrap">
+            (impuesto incluido)
+        </span>
+    </t>

@@ -1,0 +1,45 @@
+<data inherit_id="website_sale.cta_wrapper" active="False" name="Bordered CTA Wrapper">
+    <xpath expr="//div[@id='o_wsale_cta_wrapper']" position="attributes">
+        <attribute name="t-att-class" remove="pt-3" add="' o_wsale_cta_wrapper_boxed border rounded p-3'" separator=" + "/>
+    </xpath>
+    <xpath expr="//div[@id='add_to_cart_wrap']" position="attributes">
+        <attribute name="t-attf-class" remove="flex-lg-grow-0" separator=" "/>
+    </xpath>
+    <xpath expr="//div[@id='product_option_block']" position="attributes">
+        <attribute name="t-att-class" remove="flex-lg-grow-0" separator=" "/>
+    </xpath>
+    <xpath expr="//div[@id='o_wsale_cta_wrapper']" position="inside">
+        <div class="d-flex gap-5 flex-grow-1 justify-content-between align-items-center order-first w-100 mb-3 pb-3 border-bottom">
+            <!-- Label -->
+            <div>
+                <h2 class="h6 mb-1 text-o-color-1">
+                    <strong>Precio</strong>
+                </h2>
+                <span class="text-muted small">Efectivo / Transferencia</span>
+            </div>
+            <!-- Precios -->
+            <div class="text-end">
+                <!-- Precio tachado (Price List / Compare price) ARRIBA -->
+                <t t-if="combination_info and combination_info.get('compare_list_price') and combination_info.get('price') and combination_info.get('compare_list_price') &gt; combination_info.get('price')">
+                    <div class="text-muted small">
+                        <del>
+                            <span t-out="combination_info['compare_list_price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                        </del>
+                    </div>
+                </t>
+                <!-- Precio principal -->
+                <t t-if="combination_info and combination_info.get('price')">
+                    <div class="h4 fw-bold mb-0">
+                        <span t-out="combination_info['price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+                        <span class="text-muted fw-normal ms-1" style="font-size: 1.2rem;"> + IVA </span>
+                    </div>
+                    <!-- Precio final con IVA (15%) -->
+                    <t t-set="tt_price_final" t-value="combination_info['price'] * 1.15"/>
+                    <div class="text-muted small mt-1">
+                        <span t-out="tt_price_final" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/> Precio Final 
+                    </div>
+                </t>
+            </div>
+        </div>
+    </xpath>
+</data>

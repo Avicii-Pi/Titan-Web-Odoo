@@ -1,0 +1,195 @@
+<data name="Footer Titan Tech Final 4 Col + Mobile" inherit_id="website.layout">
+    <div id="footer" position="replace">
+        <div t-if="not no_footer" id="footer" class="oe_structure oe_structure_solo" t-ignore="true">
+            <!-- =========================
+           BENEFICIOS (siempre visible)
+      ========================== -->
+            <section class="ttb o_colored_level" aria-label="Beneficios de compra en Titan Tech">
+                <div class="container ttb__container">
+                    <ul class="ttb__grid" role="list">
+                        <li class="ttb__item">
+                            <div class="ttb__icon"/>
+                            <div class="ttb__text">
+                                <p class="ttb__title">Envíos a todo el Ecuador</p>
+                                <p class="ttb__desc">Entregas Seguras en 24/48h</p>
+                            </div>
+                        </li>
+                        <li class="ttb__item">
+                            <div class="ttb__icon"/>
+                            <div class="ttb__text">
+                                <p class="ttb__title">Paga al Recibir</p>
+                                <p class="ttb__desc">Pedidos Hasta $500</p>
+                            </div>
+                        </li>
+                        <li class="ttb__item">
+                            <div class="ttb__icon"/>
+                            <div class="ttb__text">
+                                <p class="ttb__title">Difiere hasta 12 meses</p>
+                                <p class="ttb__desc">Con tu Tarjeta de Credito</p>
+                            </div>
+                        </li>
+                        <li class="ttb__item">
+                            <div class="ttb__icon"/>
+                            <div class="ttb__text">
+                                <p class="ttb__title">Distribuidor Autorizado</p>
+                                <p class="ttb__desc">Originales con Garantia</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <!-- Reutilizables -->
+            <t t-set="tt_links_support">
+                <ul class="ttf__links list-unstyled">
+                    <li>
+                        <a href="#">Centro de ayuda</a>
+                    </li>
+                    <li>
+                        <a href="#">Garantía y devoluciones</a>
+                    </li>
+                    <li>
+                        <a href="#">Envíos y entregas</a>
+                    </li>
+                    <li>
+                        <a href="#">Métodos de pago</a>
+                    </li>
+                    <li>
+                        <a href="/contactus">Contáctanos</a>
+                    </li>
+                </ul>
+            </t>
+            <t t-set="tt_links_company">
+                <ul class="ttf__links list-unstyled">
+                    <li>
+                        <a href="#">Sobre nosotros</a>
+                    </li>
+                    <li>
+                        <a href="#">Servicio técnico</a>
+                    </li>
+                    <li>
+                        <a href="#">Tiendas / Quito</a>
+                    </li>
+                    <li>
+                        <a href="#">Empresas &amp; gobierno</a>
+                    </li>
+                    <li>
+                        <a href="#">Trabaja con nosotros</a>
+                    </li>
+                </ul>
+            </t>
+            <!-- =========================
+           FOOTER
+      ========================== -->
+            <footer class="ttf">
+                <div class="container ttf__wrap">
+                    <!-- DESKTOP: 4 columnas -->
+                    <div class="ttf__grid ttf__grid--4">
+                        <!-- 1) Ubicación -->
+                        <div class="ttf__col">
+                            <h4 class="ttf__title">Ubicación</h4>
+                            <div class="ttf__line"/>
+                            <div class="ttf__info">
+                                <p class="ttf__infoLine">Av. Tarqui E1-230, Quito 170403</p>
+                                <p class="ttf__infoLine">Edificio DJI - Piso 2</p>
+                                <p class="ttf__infoLine">Tel: 0963216625</p>
+                                <a class="ttf__btn" href="https://www.google.com/maps/search/?api=1&amp;query=Av.%20Tarqui%20E1-230%2C%20Quito%20170403%20Edificio%20DJI%20Piso%202" target="_blank" rel="noopener">Ver Maps</a>
+                            </div>
+                        </div>
+                        <!-- 2) Atención -->
+                        <div class="ttf__col">
+                            <h4 class="ttf__title">Atención al cliente</h4>
+                            <div class="ttf__line"/>
+                            <t t-out="tt_links_support"/>
+                        </div>
+                        <!-- 3) Titan Tech -->
+                        <div class="ttf__col">
+                            <h4 class="ttf__title">Titan Tech</h4>
+                            <div class="ttf__line"/>
+                            <t t-out="tt_links_company"/>
+                        </div>
+                        <!-- 4) Pagos + Síguenos -->
+                        <div class="ttf__col">
+                            <h4 class="ttf__title">Pagos seguros</h4>
+                            <div class="ttf__line"/>
+                            <div class="ttf__pills">
+                                <span class="ttf__pill">VISA</span>
+                                <span class="ttf__pill">Mastercard</span>
+                                <span class="ttf__pill">Diners</span>
+                                <span class="ttf__pill">Transferencia</span>
+                            </div>
+                            <div class="ttf__spacer"/>
+                            <h4 class="ttf__title">Síguenos</h4>
+                            <div class="ttf__line"/>
+                            <div class="ttf__social" aria-label="Redes sociales">
+                                <a href="/website/social/facebook" target="_blank" aria-label="Facebook">
+                                    <i class="fa fa-facebook"/>
+                                </a>
+                                <a href="/website/social/instagram" target="_blank" aria-label="Instagram">
+                                    <i class="fa fa-instagram"/>
+                                </a>
+                                <a href="/website/social/tiktok" target="_blank" aria-label="TikTok">
+                                    <i class="fa fa-tiktok"/>
+                                </a>
+                                <a href="/website/social/youtube" target="_blank" aria-label="YouTube">
+                                    <i class="fa fa-youtube-play"/>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- MOBILE: 2 acordeones -->
+                    <div class="ttf__acc" aria-label="Footer móvil">
+                        <details class="ttf__panel">
+                            <summary class="ttf__sum">Atención al cliente 
+                                <span class="ttf__chev">▾</span>
+                            </summary>
+                            <div class="ttf__content">
+                                <div class="ttf__line"/>
+                                <t t-out="tt_links_support"/>
+                            </div>
+                        </details>
+                        <details class="ttf__panel">
+                            <summary class="ttf__sum">Titan Tech 
+                                <span class="ttf__chev">▾</span>
+                            </summary>
+                            <div class="ttf__content">
+                                <div class="ttf__line"/>
+                                <t t-out="tt_links_company"/>
+                            </div>
+                        </details>
+                    </div>
+                    <!-- MOBILE BAR: Ubicación + Síguenos -->
+                    <div class="ttf__bar" aria-label="Footer compacto">
+                        <!-- 1️⃣ UBICACIÓN primero -->
+                        <div class="ttf__barRow">
+                            <span class="ttf__barLabel">Ubicación</span>
+                            <span class="ttf__barText">
+      Av. Tarqui E1-230 · Quito · Edificio DJI · Piso 2
+    </span>
+                            <a class="ttf__btn ttf__btn--maps" href="https://www.google.com/maps/search/?api=1&amp;query=Av.%20Tarqui%20E1-230%2C%20Quito%20170403%20Edificio%20DJI%20Piso%202" target="_blank" rel="noopener">
+      Ver Maps
+    </a>
+                        </div>
+                        <!-- 2️⃣ SÍGUENOS después -->
+                        <div class="ttf__barRow">
+                            <span class="ttf__barLabel">Síguenos</span>
+                            <div class="ttf__social ttf__social--bar">
+                                <a href="/website/social/facebook" target="_blank" aria-label="Facebook">
+                                    <i class="fa fa-facebook"/>
+                                </a>
+                                <a href="/website/social/instagram" target="_blank" aria-label="Instagram">
+                                    <i class="fa fa-instagram"/>
+                                </a>
+                                <a href="/website/social/tiktok" target="_blank" aria-label="TikTok">
+                                    <i class="fa fa-tiktok"/>
+                                </a>
+                                <a href="/website/social/youtube" target="_blank" aria-label="YouTube">
+                                    <i class="fa fa-youtube-play"/>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</data>

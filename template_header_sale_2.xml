@@ -1,0 +1,54 @@
+<data inherit_id="website.layout" name="Template Header Sale 2" active="False">
+    <xpath expr="//header//nav" position="replace">
+        <t t-call="website.navbar" _navbar_classes.f="o_header_force_no_radius d-none d-lg-block p-0 shadow-sm">
+            <div id="o_main_nav" class="o_main_nav">
+                <div class="o_header_hide_on_scroll">
+                    <div aria-label="Arriba" t-if="is_view_active('website.header_text_element') or is_view_active('website.header_social_links') or is_view_active('website.header_language_selector')" class="o_header_sales_two_top py-1">
+                        <ul t-attf-class="#{header_content_width} navbar-nav d-grid h-100 px-3 o_grid_header_3_cols">
+                            <!-- Return empty placeholder if the element is not active or if there is only one language to keep the right layout -->
+                            <li class="o_header_sales_two_lang_selector_placeholder" t-if="is_view_active('website.header_language_selector') == False or len(frontend_languages) == 1"/>
+                            <!-- Language Selector -->
+                            <t t-call="website.placeholder_header_language_selector" _div_classes.f="d-flex align-items-center h-100" _btn_class.f="btn btn-sm btn-outline-secondary border-0"/>
+                            <!-- Text element -->
+                            <!-- Return empty placeholder if the element is not active to keep the right layout -->
+                            <li class="o_header_sales_two_txt_elts_placeholder" t-if="is_view_active('website.header_text_element') == False"/>
+                            <t t-call="website.placeholder_header_text_element" _txt_elt_content.f="sentence" _div_class.f="d-flex align-items-center mx-auto" _item_class.f="d-flex align-items-center"/>
+                            <!-- Social -->
+                            <!-- Return empty placeholder if the element is not active to keep the right layout -->
+                            <li class="o_header_sales_two_social_links_placeholder" t-if="is_view_active('website.header_social_links') == False"/>
+                            <t t-call="website.placeholder_header_social_links" _div_class.f="d-flex align-items-center justify-content-end h-100"/>
+                        </ul>
+                    </div>
+                    <div aria-label="Medio" t-attf-class="#{header_content_width} d-flex justify-content-between align-items-center py-1">
+                        <!-- Brand -->
+                        <t t-call="website.placeholder_header_brand" _link_class.f="me-4"/>
+                        <ul class="navbar-nav align-items-center gap-1">
+                            <!-- Search bar -->
+                            <t t-call="website.placeholder_header_search_box" _input_classes.f="rounded-start-pill ps-3 text-bg-light" _submit_classes.f="rounded-end-pill p-3 bg-o-color-3 lh-1"/>
+                            <!-- Sign In -->
+                            <t t-call="portal.placeholder_user_sign_in" _link_class.f="{{_additional_btn_color or 'nav-link o_nav_link_btn'}} ms-2 border px-3"/>
+                            <!-- User Dropdown -->
+                            <t t-call="portal.user_dropdown" _user_name="true" _icon="true" _icon_class.f="fa-stack" _item_class.f="dropdown" _link_class.f="btn d-flex align-items-center border-0 fw-bold text-reset o_navlink_trigger_hover" _icon_wrap_class.f="position-relative me-2 p-2 rounded-circle o_navlink_background transition-base" _dropdown_menu_class.f="dropdown-menu-end"/>
+                        </ul>
+                    </div>
+                </div>
+                <div aria-label="Inferior" class="border-top o_border_contrast">
+                    <div t-attf-class="#{header_content_width} d-flex justify-content-between">
+                        <!-- Navbar -->
+                        <t t-call="website.navbar_nav" _nav_class.f="align-items-center me-4 py-1">
+                            <!-- Menu -->
+                            <t t-foreach="website.menu_id.child_id" t-as="submenu">
+                                <t t-call="website.submenu" item_class.f="nav-item" link_class.f="nav-link"/>
+                            </t>
+                        </t>
+                        <!-- Call To Action -->
+                        <ul class="navbar-nav">
+                            <t t-call="website.header_call_to_action_stretched" _div_class.f="d-flex h-100"/>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </t>
+        <t t-call="website.template_header_mobile" _txt_elt_content.f="sentence" _extra_navbar_classes.f="o_header_force_no_radius"/>
+    </xpath>
+</data>
