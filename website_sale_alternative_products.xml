@@ -1,0 +1,13 @@
+<data name="Alternative Products" inherit_id="website_sale.product" active="True">
+
+    <!-- Quitar/evitar el anclaje a la descripción (ya no lo usamos) -->
+    <xpath expr="//div[@t-field='product.website_description']" position="after">
+        <!-- (Deja vacío o elimina este bloque en la vista original) -->
+    </xpath>
+
+    <!-- Insertar alternos debajo de las pestañas -->
+    <xpath expr="//section[@id='product_extra_tabs']" position="after">
+        <div class="oe_structure oe_structure_solo oe_unremovable oe_unmovable" id="oe_structure_website_sale_recommended_products" t-ignore="true" t-if="product.alternative_product_ids"/>
+    </xpath>
+
+</data>

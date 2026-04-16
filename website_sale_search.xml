@@ -1,0 +1,13 @@
+<t name="Search Box" active="True" t-name="website_sale.search">
+        <t t-call="website.website_search_box_input">
+            <t t-set="_form_classes" t-valuef="o_wsale_products_searchbar_form me-auto flex-grow-1 {{_form_classes}}"/>
+            <t t-set="_submit_classes" t-valuef="btn btn-{{navClass}}"/>
+            <t t-set="_input_classes" t-valuef="border-0 text-bg-{{navClass}}"/>
+            <t t-set="search_type" t-valuef="products"/>
+            <t t-set="action" t-value="keep(search=0)"/>
+            <t t-set="display_image" t-valuef="true"/>
+            <t t-set="display_description" t-valuef="true"/>
+            <t t-set="display_extra_link" t-valuef="true"/>
+            <t t-set="display_detail" t-valuef="true"/>
+        </t>
+    </t>

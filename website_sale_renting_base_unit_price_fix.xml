@@ -1,0 +1,5 @@
+<data inherit_id="website_sale.base_unit_price">
+        <xpath expr="//t" position="attributes">
+            <attribute name="t-if">not product.rent_ok</attribute>
+        </xpath>
+    </data>

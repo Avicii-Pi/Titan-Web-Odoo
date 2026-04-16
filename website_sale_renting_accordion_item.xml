@@ -1,0 +1,18 @@
+<data name="Rental Accordion Item" inherit_id="website_sale.product_accordion">
+        <xpath expr="//div[@id='product_accordion']/div" position="before">
+            <div t-if="combination_info.get('is_rental')                       and (not website.prevent_zero_price_sale or combination_info['current_rental_price'])                       and (is_view_active('website_sale_comparison.accordion_specs_item') or is_view_active('website_sale.accordion_more_information'))" class="accordion-item">
+                <div class="accordion-header mb-0 h6">
+                    <button class="accordion-button collapsed fw-medium" type="button" data-bs-toggle="collapse" data-bs-target="#rental_pricing" aria-expanded="false" aria-controls="rental_pricing">
+                        Precio de alquiler
+                    </button>
+                </div>
+                <div id="rental_pricing" class="accordion-collapse collapse" data-bs-parent="#product_accordion">
+                    <div class="accordion-body pt-0">
+                        <t t-call="website_sale_renting.rental_pricing_table">
+                            <t t-set="is_accordion" t-value="True"/>
+                        </t>
+                    </div>
+                </div>
+            </div>
+        </xpath>
+    </data>

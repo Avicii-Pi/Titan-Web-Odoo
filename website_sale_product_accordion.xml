@@ -1,0 +1,5 @@
+<t name="Accordion On Product Page" t-name="website_sale.product_accordion">
+        <div t-if="is_view_active('website_sale_comparison.accordion_specs_item')                   or is_view_active('website_sale.accordion_more_information')" id="product_accordion" class="o_accordion_not_initialized accordion accordion-flush my-4">
+            <div t-if="is_view_active('website_sale.accordion_more_information')" id="more_information_accordion_item" class="accordion-item"/>
+        </div>
+    </t>

@@ -1,0 +1,25 @@
+<data name="Specifications Accordion Item" inherit_id="website_sale.product_accordion" active="False">
+        <xpath expr="//div[@id='more_information_accordion_item']" position="before">
+            <t t-set="attrib_categories" t-value="product.valid_product_template_attribute_line_ids._prepare_categories_for_display()"/>
+            <t t-set="product_variant_id" t-value="product._get_first_possible_variant_id()"/>
+            <t t-if="product.valid_product_template_attribute_line_ids._prepare_categories_for_display()">
+                <t t-foreach="attrib_categories" t-as="category">
+                    <div class="accordion-item">
+                        <div class="accordion-header my-0 h6">
+                            <button t-out="category.name" class="accordion-button collapsed fw-medium" type="button" data-bs-toggle="collapse" t-attf-data-bs-target="#category_accordion_{{category_index}}" aria-expanded="false" aria-controls="specifications">
+                                <t t-if="category_size == 1">Especificaciones</t>
+                                <t t-else="">Otros</t>
+                            </button>
+                        </div>
+                        <div t-attf-id="category_accordion_{{category_index}}" class="accordion-collapse collapse" data-bs-parent="#product_accordion">
+                            <div class="accordion-body pt-0">
+                                <t t-call="website_sale_comparison.specifications_table">
+                                    <t t-set="is_accordion" t-value="True"/>
+                                </t>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </xpath>
+    </data>
