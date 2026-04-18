@@ -1,0 +1,74 @@
+<t name="CTA Wrapper Titan Tech" t-name="website_sale.cta_wrapper">
+    <t t-set="tt_iva" t-value="0.15"/>
+    <t t-set="tt_int_corr" t-value="0.08"/>
+    <t t-set="tt_int_6" t-value="0.14"/>
+    <t t-set="tt_int_12" t-value="0.175"/>
+
+    <div id="o_wsale_cta_wrapper" t-att-class="'d-flex flex-wrap align-items-center gap-2 mb-4' + (' w-100 w-lg-auto' if is_50_pc else ' w-100')">
+        <t t-set="stock_real" t-value="product.sudo().qty_available"/>
+
+        <!-- 1. BOTÓN DE COMPRA -->
+        <t t-if="stock_real &gt; 0">
+            <div id="add_to_cart_wrap" class="d-flex flex-grow-1 flex-lg-grow-0 flex-wrap align-items-center gap-2 w-100">
+                <a id="add_to_cart" role="button" href="#" t-attf-class="btn btn-primary js_check_product a-submit flex-grow-1" t-att-data-show-quantity="is_view_active('website_sale.product_quantity')" data-animation-selector=".o_wsale_product_images">
+                    <i class="fa fa-shopping-cart me-2"/>
+                    <strong>Agregar al Carrito</strong>
+                </a>
+            </div>
+        </t>
+
+        <div id="product_option_block" t-attf-class="d-flex d-empty-none flex-wrap gap-2 w-100 {{'w-sm-auto' if is_50_pc else ''}}"/>
+
+        <!-- 2. SOLO CAJA DE NOTIFICACIÓN (Si qty_available es 0 o menos) -->
+        <t t-if="stock_real &lt;= 0">
+            <div class="tt_out_of_stock_custom w-100 mt-2">
+                <div class="tt_notify_box js_back_in_stock_email p-3 border rounded-4 bg-white shadow-sm" style="border: 1px solid #efefef !important;">
+                    <div class="d-flex align-items-center mb-3 gap-2">
+                        <i class="fa fa-bell-o" style="color: #E40E20;"></i>
+                        <span class="fw-bold" style="font-size: 10px; color: #666; text-transform: uppercase;">Recibe una Alerta cuando vuelva a estar disponible</span>
+                    </div>
+                    <div class="input-group input-group-sm">
+                        <input type="email" name="email" class="form-control border-end-0 py-2 px-3 js_back_in_stock_email_input" placeholder="Déjanos tu Email" t-att-data-product-id="product_variant.id or product.id" t-att-data-product-template-id="product.id" style="border-radius: 25px 0 0 25px; border-color: #ddd;"/>
+                        <button class="btn fw-bold px-4 js_btn_back_in_stock_notification" type="button" style="background:#E40E20; color:#fff; border:none; border-radius: 0 25px 25px 0; font-size: 11px;">ALERTARME</button>
+                    </div>
+                    <!-- Mensaje de confirmación nativo de Odoo V19 -->
+                    <div class="d-none js_back_in_stock_notification_success mt-2 alert alert-success small p-1 text-center">✅ Te avisaremos cuando regrese.</div>
+                </div>
+            </div>
+        </t>
+
+        <!-- 3. WHATSAPP Y 4. CUOTAS -->
+        <div class="w-100 mt-2">
+            <t t-set="wa_phone">593963216625</t>
+            <t t-set="wa_message" t-value="'Deseo consultar stock:%0A*' + (product.name or '') + '*%0A(' + (product.default_code or 'N/A') + ')%0A%0A*Link:* ' + request.httprequest.url"/>
+            <a t-att-href="'https://wa.me/' + wa_phone + '?text=' + wa_message" class="btn w-100 d-flex align-items-center justify-content-center gap-2 shadow-sm" style="background:#000; color:#fff; font-weight:500; border-radius:30px; padding: 10px; font-size: 14px;">
+                <i class="fa fa-whatsapp" style="font-size:18px;"/> Consulta por WhatsApp
+            </a>
+        </div>
+        
+        <t t-if="combination_info and combination_info.get('price')">
+            <t t-set="price_iva" t-value="combination_info['price'] * (1 + tt_iva)"/>
+            <t t-set="val_corr" t-value="price_iva * (1 + tt_int_corr)"/>
+            <t t-set="val_6" t-value="(price_iva * (1 + tt_int_6)) / 6"/>
+            <t t-set="val_12" t-value="(price_iva * (1 + tt_int_12)) / 12"/>
+
+            <t t-set="f_corr" t-value="'{:,.2f}'.format(val_corr).replace(',', 'X').replace('.', ',').replace('X', '.')"/>
+            <t t-set="f_6" t-value="'{:,.2f}'.format(val_6).replace(',', 'X').replace('.', ',').replace('X', '.')"/>
+            <t t-set="f_12" t-value="'{:,.2f}'.format(val_12).replace(',', 'X').replace('.', ',').replace('X', '.')"/>
+
+            <div class="w-100 mt-3">
+                <details class="shadow-sm" style="border:1px solid #dedede; border-radius:20px; padding:10px 14px; background:#fbfbfb;">
+                    <summary style="cursor:pointer; font-weight:600; display:flex; justify-content:space-between; align-items:center; list-style:none;">
+                        <span style="font-size: 14px;">Cuotas desde <span style="color:#E40E20; font-weight:700;"><t t-esc="website.currency_id.symbol"/> <t t-esc="f_12"/></span> <span style="font-size:11px; color:#666;">/mes</span></span>
+                        <span style="font-size:12px; color:#777;">Detalles ▼</span>
+                    </summary>
+                    <div class="mt-2 p-2 bg-white border rounded-3" style="font-size:13px;">
+                        <div class="d-flex justify-content-between py-1 border-top"><span>Pago Corriente</span> <span class="fw-bold text-danger"><t t-esc="website.currency_id.symbol"/> <t t-esc="f_corr"/></span></div>
+                        <div class="d-flex justify-content-between py-1 border-top"><span>6 Meses</span> <span class="fw-bold text-danger"><t t-esc="website.currency_id.symbol"/> <t t-esc="f_6"/> /mes</span></div>
+                        <div class="d-flex justify-content-between py-1 border-top"><span>12 Meses</span> <span class="fw-bold text-danger"><t t-esc="website.currency_id.symbol"/> <t t-esc="f_12"/> /mes</span></div>
+                    </div>
+                </details>
+            </div>
+        </t>
+    </div>
+</t>

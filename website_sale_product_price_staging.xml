@@ -1,0 +1,49 @@
+<t t-name="website_sale.product_price">
+    <!-- VARIABLES DE STOCK TITAN (Sudo para evitar 403) -->
+    <t t-set="tt_stock" t-value="product.sudo().qty_available"/>
+
+    <!-- INDICADORES ESTILO STATUS (Foquitos premium) -->
+    <div class="tt_status_indicators mb-3 d-flex align-items-center gap-2" style="font-family: 'Inter', sans-serif;">
+        
+        <!-- CASO 1: EN STOCK (Verde con Check) -->
+        <t t-if="tt_stock &gt; 3">
+            <div class="d-flex align-items-center gap-2 px-2 py-1" style="background: rgba(40, 167, 69, 0.1); border-radius: 12px;">
+                <div style="height: 14px; width: 14px; background-color: #28a745; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 8px; color: white; position: relative;">
+                    <i class="fa fa-check" style="position: absolute; font-size: 7px;"/>
+                </div>
+                <span style="color: #28a745; font-size: 11px; font-weight: 700; letter-spacing: 0.3px; text-transform: uppercase;">En Stock</span>
+            </div>
+        </t>
+
+        <!-- CASO 2: POCAS UNIDADES (Amarillo liso) -->
+        <t t-elif="tt_stock &gt; 0">
+            <div class="d-flex align-items-center gap-2 px-2 py-1" style="background: rgba(255, 193, 7, 0.1); border-radius: 12px;">
+                <div style="height: 14px; width: 14px; background-color: #ffc107; border-radius: 50%; display: flex; align-items: center; justify-content: center; position: relative;">
+                    <!-- Punto sólido central -->
+                </div>
+                <span style="color: #856404; font-size: 11px; font-weight: 700; letter-spacing: 0.3px; text-transform: uppercase;">
+                    <t t-out="int(tt_stock)"/> Unidades Disponibles
+                </span>
+            </div>
+        </t>
+
+        <!-- CASO 3: AGOTADO (Rojo con Menos) -->
+        <t t-else="">
+            <div class="d-flex align-items-center gap-2 px-2 py-1" style="background: rgba(228, 14, 32, 0.1); border-radius: 12px;">
+                <div style="height: 14px; width: 14px; background-color: #E40E20; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 8px; color: white; position: relative;">
+                    <i class="fa fa-minus" style="position: absolute; font-size: 7px;"/>
+                </div>
+                <span style="color: #E40E20; font-size: 11px; font-weight: 700; letter-spacing: 0.3px; text-transform: uppercase;">Agotado</span>
+            </div>
+        </t>
+
+    </div>
+
+    <!-- PRECIO (Mantenemos tu bloque de precio intacto) -->
+    <div name="product_price" class="product_price d-inline-block">
+        <div name="product_price_container" class="css_editable_mode_hidden d-flex align-items-baseline justify-content-end gap-2 flex-wrap h5 mb-0 text-wrap">
+            <span class="oe_price" style="white-space: nowrap;" t-out="combination_info['price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}"/>
+            <span t-attf-class="text-muted oe_default_price mb-0 h6 {{'' if combination_info['has_discounted_price'] else 'd-none'}}" style="text-decoration: line-through; white-space: nowrap;" t-out="combination_info['list_price']" t-options="{'widget': 'monetary', 'display_currency': website.currency_id}" name="product_list_price"/>
+        </div>
+    </div>
+</t>
